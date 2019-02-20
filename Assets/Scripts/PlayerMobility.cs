@@ -5,8 +5,7 @@ public class PlayerMobility : MonoBehaviour
     public Rigidbody2D rb;
     public float speed;
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Quaternion rot = Quaternion.LookRotation(transform.position - mousePosition, Vector3.forward);
@@ -20,8 +19,8 @@ public class PlayerMobility : MonoBehaviour
 
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0);
 
-        rb.AddForce(movement * speed); //TODO: ver Time.deltaTime
+        transform.position = transform.position + movement* speed;
     }
 }
