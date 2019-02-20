@@ -124,8 +124,8 @@ GameObject:
   - component: {fileID: 478482297}
   - component: {fileID: 478482296}
   - component: {fileID: 478482301}
-  - component: {fileID: 478482300}
   - component: {fileID: 478482299}
+  - component: {fileID: 478482300}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
+  anim: {fileID: 478482296}
 --- !u!61 &478482301
 BoxCollider2D:
   m_ObjectHideFlags: 0
