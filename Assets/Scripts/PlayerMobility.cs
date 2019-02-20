@@ -1,11 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerMobility : MonoBehaviour
 {
-    public Rigidbody2D rb;
     public float speed;
 
     void Update()
+    {
+        PlayerRotation();
+        PlayerMovement();
+    }
+
+    private void PlayerRotation()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Quaternion rot = Quaternion.LookRotation(transform.position - mousePosition, Vector3.forward);
@@ -13,14 +19,13 @@ public class PlayerMobility : MonoBehaviour
         transform.rotation = rot;
 
         transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
-        //rb.angularVelocity = 0;
+    }
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0);
-
-        transform.position = transform.position + movement* speed;
+    private void PlayerMovement()
+    {
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
+        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
+        transform.position = transform.position + movement * speed;
     }
 }
