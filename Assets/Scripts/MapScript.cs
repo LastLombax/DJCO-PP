@@ -2,20 +2,26 @@
 
 public class MapScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public GameObject MapUI;
+    public GameObject Player;
+    private Vector3 PlayerPos; 
+    
+    public void Update(){
+        if (MapUI.activeSelf){
+            Player.transform.position = PlayerPos;
+            if (Input.GetKey(KeyCode.Escape))
+                CloseMap();
+        }
     }
 
     public void ShowMap()
     {
-        Debug.Log("shows map");
+        PlayerPos = Player.transform.position;
+        MapUI.SetActive(true);
+    }
+
+    public void CloseMap()
+    {
+        MapUI.SetActive(false);
     }
 }
