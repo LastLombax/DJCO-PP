@@ -1,17 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 public class PlayerCollision : MonoBehaviour
 {
+    public GameObject map;
+
     public float impact = 1.2f;
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-        {
-            GetComponent<PlayerStats>().EnemyCollision();
-            Vector3 force = transform.position - collision.transform.position;
-            transform.position = transform.position + force * impact;
-        }
+            EnemyCollision(collision);
+
+        if (collision.gameObject.name == "PC")
+            map.GetComponent<MapScript>().ShowMap();
+    }
+
+    private void EnemyCollision(Collision2D collision)
+    {
+        GetComponent<PlayerStats>().EnemyCollision();
+        Vector3 force = transform.position - collision.transform.position;
+        transform.position = transform.position + force * impact;
     }
 }
