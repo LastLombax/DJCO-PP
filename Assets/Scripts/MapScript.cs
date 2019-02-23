@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapScript : MonoBehaviour
 {
@@ -23,5 +24,9 @@ public class MapScript : MonoBehaviour
     public void CloseMap()
     {
         MapUI.SetActive(false);
+    }
+
+    public void AOCOLevel(){
+        SceneManager.LoadScene("SampleScene");
     }
 }
