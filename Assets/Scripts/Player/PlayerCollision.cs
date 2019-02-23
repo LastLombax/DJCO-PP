@@ -15,6 +15,12 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.gameObject.name == "PC")
             map.GetComponent<MapScript>().ShowMap();
+
+        if (collision.gameObject.tag == "ProjectilePlayer")
+        {
+            Debug.Log("here");
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<CircleCollider2D>(), GetComponent<Collider2D>());
+        }
     }
 
     private void EnemyCollision(Collision2D collision)

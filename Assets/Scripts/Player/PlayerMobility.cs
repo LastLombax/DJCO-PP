@@ -7,7 +7,7 @@ public class PlayerMobility : MonoBehaviour
 
     public GameObject projectile;
     Vector2 projectilePos;
-    public float fireRate = 0.5f;
+    public float fireRate = 0.05f;
     float nextFire = 0;
 
     void Update()
@@ -65,9 +65,14 @@ public class PlayerMobility : MonoBehaviour
     private void fire()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Quaternion rot = Quaternion.LookRotation(transform.position - mousePosition, Vector3.forward);
+        Vector3 direction = transform.position - mousePosition;
+        var dirLenght = Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y);
+    
+
         projectilePos = transform.position;
-        Instantiate(projectile, projectilePos, rot);
+        projectilePos.x -= 2 * (direction.x / dirLenght);
+        projectilePos.y -= 2 * (direction.y / dirLenght);
+        Instantiate(projectile, projectilePos, Quaternion.identity);
     }
 
 }
