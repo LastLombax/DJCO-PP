@@ -6,6 +6,8 @@ public class PlayerCollision : MonoBehaviour
 {
     public GameObject map;
 
+    public GameObject player;
+
     public float impact = 1.2f;
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -15,6 +17,9 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.gameObject.name == "PC")
             map.GetComponent<MapScript>().ShowMap();
+
+        if (collision.gameObject.name == "DonaLina")
+           Debug.Log("I'm Dona Lina, boop boop. Upgrade your skills here");
 
         if (collision.gameObject.tag == "ProjectilePlayer")
         {
