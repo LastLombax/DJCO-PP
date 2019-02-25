@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     public GameObject map;
-
+    public GameObject skillTree;
     public GameObject player;
 
     public float impact = 1.2f;
@@ -19,7 +19,7 @@ public class PlayerCollision : MonoBehaviour
             map.GetComponent<MapScript>().ShowMap();
 
         if (collision.gameObject.name == "DonaLina")
-           Debug.Log("I'm Dona Lina, boop boop. Upgrade your skills here");
+            skillTree.GetComponent<SkillTreeScript>().ShowTree();
 
         if (collision.gameObject.tag == "ProjectilePlayer")
         {
