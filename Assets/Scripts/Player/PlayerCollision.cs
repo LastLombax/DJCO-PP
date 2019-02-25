@@ -6,7 +6,6 @@ public class PlayerCollision : MonoBehaviour
 {
     public GameObject map;
     public GameObject skillTree;
-    public GameObject player;
 
     public float impact = 1.2f;
 
