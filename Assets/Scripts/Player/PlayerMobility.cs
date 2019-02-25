@@ -5,16 +5,10 @@ public class PlayerMobility : MonoBehaviour
     public float speed;
     public Animator anim;
 
-    public GameObject projectile;
-    Vector2 projectilePos;
-    public float fireRate = 0.05f;
-    float nextFire = 0;
-
     void Update()
     {
         PlayerRotation();
         PlayerMovement();
-        PlayerSkills();
     }
 
     private void PlayerRotation()
@@ -52,27 +46,4 @@ public class PlayerMobility : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
         transform.position = transform.position + movement * speed;
     }
-
-    private void PlayerSkills()
-    {
-        if(Input.GetKeyDown(KeyCode.Q) && Time.time > nextFire)
-        {
-            nextFire = Time.time + fireRate;
-            fire();
-        }
-    }
-
-    private void fire()
-    {
-        var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = transform.position - mousePosition;
-        var dirLenght = Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y);
-    
-
-        projectilePos = transform.position;
-        projectilePos.x -= 2 * (direction.x / dirLenght);
-        projectilePos.y -= 2 * (direction.y / dirLenght);
-        Instantiate(projectile, projectilePos, Quaternion.identity);
-    }
-
 }

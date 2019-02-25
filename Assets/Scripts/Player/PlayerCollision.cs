@@ -22,8 +22,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.gameObject.tag == "ProjectilePlayer")
         {
-            Debug.Log("here");
-            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<CircleCollider2D>(), GetComponent<Collider2D>());
+            
         }
     }
 
