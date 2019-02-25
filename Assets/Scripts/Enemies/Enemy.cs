@@ -30,4 +30,9 @@ public abstract class Enemy : MonoBehaviour
             //anim.Play("PlayerAnimationRight");
         }
     }
+
+    public void EnemyMovement() {
+        Vector3 movement = player.transform.position - transform.position;
+        transform.position += movement.normalized * speed.Value;
+    }
 }
