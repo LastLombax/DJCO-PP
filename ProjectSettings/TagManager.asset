@@ -8,6 +8,7 @@ TagManager:
   - Gateway
   - ProjectilePlayer
   - Wall
+  - Projectile
   layers:
   - Default
   - TransparentFX

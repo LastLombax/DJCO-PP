@@ -20,9 +20,10 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.name == "DonaLina")
             skillTree.GetComponent<SkillTreeScript>().ShowTree();
 
-        if (collision.gameObject.tag == "ProjectilePlayer")
+        if (collision.gameObject.tag == "Projectile")
         {
-            
+            EnemyCollision(collision);
+            Destroy(collision.gameObject);
         }
     }
 
