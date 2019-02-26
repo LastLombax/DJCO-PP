@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RangedShotScript : MonoBehaviour
 {
-
     public float velX;
     public float velY;
     public float velocity;

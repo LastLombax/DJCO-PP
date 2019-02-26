@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerSkills : MonoBehaviour
 {
+<<<<<<< HEAD
 
     public GameObject projectileFireBall;
     public GameObject chainProjectile;
+=======
+    public float weaponDistance = 1.5f;
+    public GameObject projectile;
+    public GameObject weapon;
+>>>>>>> 480cb960341634c6fd83e3a9c4b7d1fa9c24bda7
     Vector2 projectilePos;
     public float fireRateFireBall = 0.05f;
     float nextFireFireBall = 0;
@@ -37,6 +43,11 @@ public class PlayerSkills : MonoBehaviour
             nextFireFireBall = Time.time + fireRateFireBall;
             Fireball();
         }
+
+        if (Input.GetMouseButtonDown(0) && GameObject.Find("Weapon(Clone)") == null) {
+            attack();
+        }
+
     }
 
     private void Fireball()
@@ -46,6 +57,7 @@ public class PlayerSkills : MonoBehaviour
 
         Physics2D.IgnoreCollision(fireBall.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
+<<<<<<< HEAD
 
     private void ChainLightning()
     {
@@ -53,5 +65,22 @@ public class PlayerSkills : MonoBehaviour
         var chainLightning = Instantiate(chainProjectile, projectilePos, Quaternion.identity);
 
         Physics2D.IgnoreCollision(chainLightning.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+=======
+    private void attack(){
+       
+        var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePosition - transform.position;
+
+        direction = new Vector3(direction.x, direction.y, 0);
+
+        var dirLength = direction.normalized;
+     
+        var weaponPos = transform.position + dirLength*weaponDistance;
+
+        var attack = Instantiate(weapon, weaponPos, Quaternion.identity);
+
+        Physics2D.IgnoreCollision(attack.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
+>>>>>>> 480cb960341634c6fd83e3a9c4b7d1fa9c24bda7
     }
 }
