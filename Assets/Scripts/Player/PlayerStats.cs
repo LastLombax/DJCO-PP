@@ -17,16 +17,14 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //StatModifier mod = new StatModifier(10, StatModType.Flat);
-        //health.AddModifier(mod);
-        //Debug.Log(health.Value);
-        if (health.Value <= 0)
-            Debug.Log("Game Over");
     }
 
-    public void EnemyCollision()
+    public void DmgCollision(float damage)
     {
-        StatModifier collisionDmg = new StatModifier(-1, StatModType.Flat);
+        StatModifier collisionDmg = new StatModifier(damage, StatModType.Flat);
         health.AddModifier(collisionDmg);
+        
+        if (health.Value <= 0)
+            Debug.Log("Game Over");
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChainScript : MonoBehaviour
+public class ChainScript : Skill
 {
     private ArrayList enemiesVisited = new ArrayList();
     public int numberBounces;
@@ -11,15 +11,12 @@ public class ChainScript : MonoBehaviour
     private float velY;
     public float velocity;
     public float range;
-    Rigidbody2D rb;
-    private Vector3 startingPos;
     private GameObject nearestEnemy;
 
     // Start is called before the first frame update
     void Start()
-    {
-        startingPos = transform.position;
-        rb = GetComponent<Rigidbody2D>();
+    {   
+        Setup();
         nearestEnemy = GetClosestEnemy();
     }
 
@@ -31,7 +28,7 @@ public class ChainScript : MonoBehaviour
         transform.position += movement.normalized * velocity;
 
     }
-
+ 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")

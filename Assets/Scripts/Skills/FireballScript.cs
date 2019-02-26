@@ -2,27 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireballScript : MonoBehaviour
+public class FireballScript : Skill
 {
     public float velX;
     public float velY;
     public float velocity;
     public float range;
-    Rigidbody2D rb;
-    private Vector3 startingPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        startingPos = transform.position;
-
+        Setup();
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = transform.position - mousePosition;
         var dirLenght = Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y);
 
         velX = -direction.x * (velocity / dirLenght);
         velY = -direction.y * (velocity / dirLenght);
-        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -34,5 +30,9 @@ public class FireballScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision){
+        Destroy(gameObject);
     }
 }

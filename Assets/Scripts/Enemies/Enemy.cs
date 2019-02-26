@@ -30,9 +30,30 @@ public abstract class Enemy : MonoBehaviour
             //anim.Play("PlayerAnimationRight");
         }
     }
-
-    public void EnemyMovement() {
+    protected void EnemyMovement() {
         Vector3 movement = player.transform.position - transform.position;
         transform.position += movement.normalized * speed.Value;
     }
+
+    public void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.name == "Weapon(Clone)")
+            DmgCollision(-2);
+        if (collision.gameObject.name == "Fireball(Clone)")
+            DmgCollision(-2);
+        if (collision.gameObject.name == "chain(Clone)")
+            DmgCollision(-1);
+            
+    }
+
+    public void DmgCollision(float damage)
+    {
+        StatModifier collisionDmg = new StatModifier(damage, StatModType.Flat);
+        health.AddModifier(collisionDmg);
+        
+        if (health.Value <= 0)
+            Destroy(gameObject);
+            
+    }
+
+    
 }

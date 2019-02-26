@@ -26,12 +26,12 @@ public class WeaponScript : MonoBehaviour
         currentAng = startAng = midAng + offsetAng;
         endAng = midAng - offsetAng;
 
-       /* transform.eulerAngles = new Vector3(
+        transform.eulerAngles = new Vector3(
             0,
             0,
             startAng + 35
         );
-        */
+
     }
 
     // Update is called once per frame

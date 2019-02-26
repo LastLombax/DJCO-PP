@@ -29,7 +29,7 @@ public class PlayerCollision : MonoBehaviour
 
     private void EnemyCollision(Collision2D collision)
     {
-        GetComponent<PlayerStats>().EnemyCollision();
+        GetComponent<PlayerStats>().DmgCollision(-1);
         Vector3 force = transform.position - collision.transform.position;
         transform.position = transform.position + force * impact;
     }
