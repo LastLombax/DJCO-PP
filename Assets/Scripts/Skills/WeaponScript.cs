@@ -12,6 +12,7 @@ public class WeaponScript : MonoBehaviour
     public float rotationSpeed = 3;
 
     private float startAng, endAng, currentAng;
+    private Vector3 previousPlayerPos;
 
     // Start is called before the first frame update
     void Start()
@@ -20,18 +21,26 @@ public class WeaponScript : MonoBehaviour
         player = GameObject.Find("Player");
 
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Quaternion rot = Quaternion.LookRotation(mousePosition - transform.position, Vector3.forward);
+        Quaternion rot = Quaternion.LookRotation(mousePosition - player.transform.position, Vector3.forward);
+        previousPlayerPos = player.transform.position;
 
         var midAng = rot.eulerAngles.z;
         currentAng = startAng = midAng + offsetAng;
         endAng = midAng - offsetAng;
 
+<<<<<<< HEAD
         transform.eulerAngles = new Vector3(
             0,
             0,
             startAng + 35
         );
 
+=======
+        var rotationVector = transform.rotation.eulerAngles;
+        rotationVector.z = (-currentAng + 90)%360;
+        Debug.Log(rotationVector.z);
+        transform.rotation = Quaternion.Euler(rotationVector);
+>>>>>>> 9fce6c5686a082ffefac6c3f63b54eded3cf3fae
     }
 
     // Update is called once per frame
@@ -43,6 +52,9 @@ public class WeaponScript : MonoBehaviour
         {
             transform.RotateAround(player.transform.position, Vector3.back, rotationSpeed);
             currentAng= currentAng - rotationSpeed;
+            var positionDiference = player.transform.position - previousPlayerPos;
+            previousPlayerPos = player.transform.position;
+            transform.position += positionDiference;
         }
     }
 }
