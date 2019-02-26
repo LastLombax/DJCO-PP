@@ -28,19 +28,10 @@ public class WeaponScript : MonoBehaviour
         currentAng = startAng = midAng + offsetAng;
         endAng = midAng - offsetAng;
 
-<<<<<<< HEAD
-        transform.eulerAngles = new Vector3(
-            0,
-            0,
-            startAng + 35
-        );
-
-=======
         var rotationVector = transform.rotation.eulerAngles;
         rotationVector.z = (-currentAng + 90)%360;
         Debug.Log(rotationVector.z);
         transform.rotation = Quaternion.Euler(rotationVector);
->>>>>>> 9fce6c5686a082ffefac6c3f63b54eded3cf3fae
     }
 
     // Update is called once per frame
