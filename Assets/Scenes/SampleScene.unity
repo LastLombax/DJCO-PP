@@ -130,7 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3f9a88187a36c4fa5e212d2d356d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 4995583231741423883, guid: 0e6b8ab1640e6e64eb8ab98b7d6a267a,
+  projectileFireBall: {fileID: 4995583231741423883, guid: 0e6b8ab1640e6e64eb8ab98b7d6a267a,
+    type: 3}
+  chainProjectile: {fileID: 6928458116361970120, guid: 24825ff3dd2ebcd49a8f3f0449c5c711,
     type: 3}
   fireRate: 1
 --- !u!1 &519420028

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 933830073579923659}
   - component: {fileID: 8989493014710584363}
   m_Layer: 0
-  m_Name: coin
-  m_TagString: Untagged
+  m_Name: chain
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,3 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2e7c445a681cb4886c60489de1519e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberBounces: 3
+  velocity: 0.1
+  range: 0

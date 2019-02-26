@@ -5,32 +5,53 @@ using UnityEngine;
 
 public class ChainScript : MonoBehaviour
 {
-    private GameObject[] enemiesVisited;
-    public float velX;
-    public float velY;
+    private ArrayList enemiesVisited = new ArrayList();
+    public int numberBounces;
+    private float velX;
+    private float velY;
     public float velocity;
     public float range;
     Rigidbody2D rb;
     private Vector3 startingPos;
+    private GameObject nearestEnemy;
 
     // Start is called before the first frame update
     void Start()
     {
         startingPos = transform.position;
-        var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = transform.position - mousePosition;
-        var dirLenght = Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y);
-
-        velX = -direction.x * (velocity / dirLenght);
-        velY = -direction.y * (velocity / dirLenght);
         rb = GetComponent<Rigidbody2D>();
+        nearestEnemy = GetClosestEnemy();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(velX, velY);
-        
+        var enemyPosition = nearestEnemy.transform.position;
+        Vector3 movement = - transform.position + enemyPosition;
+        transform.position += movement.normalized * velocity;
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            if (numberBounces == 0)
+            {
+                Destroy(gameObject);
+            } else
+            {
+                enemiesVisited.Add(nearestEnemy);
+                nearestEnemy = GetClosestEnemy();
+                if(nearestEnemy == null)
+                {
+                    Destroy(gameObject);
+                }
+                numberBounces--;
+            }
+        }
+            
+
     }
 
     GameObject GetClosestEnemy()
@@ -42,7 +63,9 @@ public class ChainScript : MonoBehaviour
         Vector3 position = transform.position;
         foreach (GameObject go in gos)
         {
-            if (Array.Exists(enemiesVisited, elem => elem = go)) {
+            if (enemiesVisited.Contains(go))
+            {
+        
                 continue;
             }
             Vector3 diff = go.transform.position - position;
