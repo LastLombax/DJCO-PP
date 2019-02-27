@@ -12,37 +12,55 @@ public class ChainScript : Skill
     public float velocity;
     public float range;
     private GameObject nearestEnemy;
+    private bool returning = false;
 
     // Start is called before the first frame update
     void Start()
-    {   
-        Setup();
+    {
         nearestEnemy = GetClosestEnemy();
+        if (nearestEnemy == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Setup();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (nearestEnemy == null)
+        {
+            numberBounces = 0;
+            returning = true;
+            nearestEnemy = GameObject.Find("Player");
+        }
         var enemyPosition = nearestEnemy.transform.position;
         Vector3 movement = - transform.position + enemyPosition;
         transform.position += movement.normalized * velocity;
-
     }
  
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "Player" && returning)
+        {
+            Destroy(gameObject);
+        }
         if (collision.gameObject.tag == "Enemy")
         {
             if (numberBounces == 0)
             {
-                Destroy(gameObject);
+                returning = true;
+                nearestEnemy = GameObject.Find("Player");
             } else
             {
                 enemiesVisited.Add(nearestEnemy);
                 nearestEnemy = GetClosestEnemy();
                 if(nearestEnemy == null)
                 {
-                    Destroy(gameObject);
+                    returning = true;
+                    nearestEnemy = GameObject.Find("Player");
                 }
                 numberBounces--;
             }
@@ -72,6 +90,10 @@ public class ChainScript : Skill
                 closest = go;
                 distance = curDistance;
             }
+        }
+        if(range < distance)
+        {
+            return null;
         }
         return closest;
     }

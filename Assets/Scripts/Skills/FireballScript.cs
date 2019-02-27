@@ -32,7 +32,5 @@ public class FireballScript : Skill
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision){
-        Destroy(gameObject);
-    }
+
 }
