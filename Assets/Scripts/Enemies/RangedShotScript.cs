@@ -32,4 +32,16 @@ public class RangedShotScript : MonoBehaviour
         if ((transform.position - startingPos).magnitude > range)
             Destroy(gameObject);
     }
+
+   public void OnTriggerEnter2D(Collider2D collider)
+    {
+       if (collider.gameObject.name == "Player")
+        {
+            collider.gameObject.GetComponent<PlayerCollision>().EnemyCollision(collider);
+            Destroy(gameObject);
+        }
+        if (collider.gameObject.tag == "Enemy") 
+            Destroy(gameObject);
+    }
+
 }

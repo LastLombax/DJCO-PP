@@ -42,7 +42,8 @@ public abstract class Enemy : MonoBehaviour
             DmgCollision(-2);
         if (collision.gameObject.name == "chain(Clone)")
             DmgCollision(-1);
-            
+        if (collision.gameObject.name == "RangedShot(Clone)")
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
     }
 
     public void DmgCollision(float damage)
@@ -54,6 +55,5 @@ public abstract class Enemy : MonoBehaviour
             Destroy(gameObject);
             
     }
-
     
 }

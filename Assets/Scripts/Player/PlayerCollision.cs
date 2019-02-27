@@ -19,18 +19,21 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.gameObject.name == "DonaLina")
             skillTree.GetComponent<SkillTreeScript>().ShowTree();
-
-        if (collision.gameObject.tag == "Projectile")
-        {
-            EnemyCollision(collision);
-            Destroy(collision.gameObject);
-        }
+     
     }
 
-    private void EnemyCollision(Collision2D collision)
+    public void EnemyCollision(Collision2D collision)
     {
         GetComponent<PlayerStats>().DmgCollision(-1);
         Vector3 force = transform.position - collision.transform.position;
         transform.position = transform.position + force * impact;
     }
+
+    public void EnemyCollision(Collider2D collision)
+    {
+        GetComponent<PlayerStats>().DmgCollision(-1);
+        Vector3 force = transform.position - collision.transform.position;
+        transform.position = transform.position + force * impact;
+    }
+
 }
