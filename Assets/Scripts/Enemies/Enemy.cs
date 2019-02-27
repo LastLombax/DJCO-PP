@@ -55,5 +55,14 @@ public abstract class Enemy : MonoBehaviour
             Destroy(gameObject);
             
     }
-    
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Fireball(Clone)")
+        {
+            DmgCollision(-1);
+            Destroy(collision.gameObject);
+        }
+    }
+
 }
