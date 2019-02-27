@@ -4,8 +4,14 @@ using UnityEngine.SceneManagement;
 public class MapScript : MonoBehaviour
 {
     public GameObject MapUI;
-    public GameObject Player;
+    private Transform Player;
     private Vector3 PlayerPos; 
+
+    void Start()
+    {
+        Player = GameObject.Find("Player").transform;
+        //DontDestroyOnLoad(gameObject);
+    }
     
     public void Update(){
         if (MapUI.activeSelf){

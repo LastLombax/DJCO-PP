@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapUI: {fileID: 394407664}
-  Player: {fileID: 1212289360}
+  Player: {fileID: 0}
 --- !u!4 &260055498
 Transform:
   m_ObjectHideFlags: 0
@@ -1247,7 +1247,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &491805754
 GameObject:
@@ -1819,20 +1819,24 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1212289360}
+      objectReference: {fileID: 0}
     - target: {fileID: 2839172275851815239, guid: 492b922924e75a6458e1ca9da4e59f61,
+        type: 3}
+      propertyPath: skillTree
+      value: 
+      objectReference: {fileID: 1225982146}
+    - target: {fileID: 4670031726849965114, guid: 492b922924e75a6458e1ca9da4e59f61,
+        type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 260055496}
+    - target: {fileID: 4670031726849965114, guid: 492b922924e75a6458e1ca9da4e59f61,
         type: 3}
       propertyPath: skillTree
       value: 
       objectReference: {fileID: 1225982146}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492b922924e75a6458e1ca9da4e59f61, type: 3}
---- !u!1 &1212289360 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2839172275851815247, guid: 492b922924e75a6458e1ca9da4e59f61,
-    type: 3}
-  m_PrefabInstance: {fileID: 1197836727}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1225982146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,7 +1867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillTreeUI: {fileID: 2001334041}
-  Player: {fileID: 1212289360}
+  Player: {fileID: 0}
 --- !u!4 &1225982148
 Transform:
   m_ObjectHideFlags: 0

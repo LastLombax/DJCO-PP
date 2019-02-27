@@ -4,8 +4,14 @@ using UnityEngine;
 public class SkillTreeScript : MonoBehaviour
 {
     public GameObject SkillTreeUI;
-    public GameObject Player;
+    private Transform Player;
     private Vector3 PlayerPos; 
+
+    void Start()
+    {
+        Player = GameObject.Find("Player").transform;
+        //DontDestroyOnLoad(gameObject);
+    }
     
     public void Update(){
         if (SkillTreeUI.activeSelf){

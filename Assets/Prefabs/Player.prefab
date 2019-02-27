@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2839172275851815247
+--- !u!1 &2524527934507165248
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2839172275851815234}
-  - component: {fileID: 2839172275851815233}
-  - component: {fileID: 2839172275851815232}
-  - component: {fileID: 2839172275851815237}
-  - component: {fileID: 2839172275851815235}
-  - component: {fileID: 2839172275851815236}
-  - component: {fileID: 2839172275851815238}
-  - component: {fileID: 2839172275851815239}
+  - component: {fileID: 4670031726849965119}
+  - component: {fileID: 4670031726849965116}
+  - component: {fileID: 4670031726849965117}
+  - component: {fileID: 4670031726849965112}
+  - component: {fileID: 4670031726849965118}
+  - component: {fileID: 4670031726849965113}
+  - component: {fileID: 4670031726849965115}
+  - component: {fileID: 4670031726849965114}
+  - component: {fileID: 2524527934507165273}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2839172275851815234
+--- !u!4 &4670031726849965119
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2839172275851815247}
+  m_GameObject: {fileID: 2524527934507165248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.521, y: -2.878, z: 0}
+  m_LocalPosition: {x: -2.69, y: -2.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2839172275851815233
+--- !u!212 &4670031726849965116
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2839172275851815247}
+  m_GameObject: {fileID: 2524527934507165248}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -85,14 +86,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2839172275851815232
+--- !u!95 &4670031726849965117
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2839172275851815247}
+  m_GameObject: {fileID: 2524527934507165248}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ed6573cc003006144a0db731cbd9044e, type: 2}
@@ -104,13 +105,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &2839172275851815237
+--- !u!61 &4670031726849965112
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2839172275851815247}
+  m_GameObject: {fileID: 2524527934507165248}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -130,14 +131,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0666666, y: 1.3333333}
   m_EdgeRadius: 0
---- !u!50 &2839172275851815235
+--- !u!50 &4670031726849965118
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2839172275851815247}
+  m_GameObject: {fileID: 2524527934507165248}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -151,27 +152,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2839172275851815236
+--- !u!114 &4670031726849965113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2839172275851815247}
+  m_GameObject: {fileID: 2524527934507165248}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fbf752db9e7a814fa20f1884bbd771e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  anim: {fileID: 2839172275851815232}
---- !u!114 &2839172275851815238
+  anim: {fileID: 4670031726849965117}
+--- !u!114 &4670031726849965115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2839172275851815247}
+  m_GameObject: {fileID: 2524527934507165248}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b473a6ab18c086a418402852f1d0ec5c, type: 3}
@@ -183,13 +184,13 @@ MonoBehaviour:
     BaseValue: 0
   speed:
     BaseValue: 0
---- !u!114 &2839172275851815239
+--- !u!114 &4670031726849965114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2839172275851815247}
+  m_GameObject: {fileID: 2524527934507165248}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbd464189e0b31944b48f3384fd94641, type: 3}
@@ -198,3 +199,23 @@ MonoBehaviour:
   map: {fileID: 0}
   skillTree: {fileID: 0}
   impact: 1.2
+--- !u!114 &2524527934507165273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2524527934507165248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3f9a88187a36c4fa5e212d2d356d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileFireBall: {fileID: 4995583231741423883, guid: 0e6b8ab1640e6e64eb8ab98b7d6a267a,
+    type: 3}
+  chainProjectile: {fileID: 6928458116361970120, guid: 24825ff3dd2ebcd49a8f3f0449c5c711,
+    type: 3}
+  weaponDistance: 1.5
+  weapon: {fileID: 7815876761519203673, guid: 6b6c7c40ebbcf94418817db4cbdda3fe, type: 3}
+  fireRateFireBall: 0.05
+  fireRateChain: 0.05
