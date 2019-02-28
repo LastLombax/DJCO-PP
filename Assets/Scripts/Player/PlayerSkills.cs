@@ -6,6 +6,7 @@ public class PlayerSkills : MonoBehaviour
 {
     public GameObject projectileFireBall;
     public GameObject chainProjectile;
+    public GameObject poisonProjectile;
     public float weaponDistance = 1.5f;
     public GameObject weapon;
     Vector2 projectilePos;
@@ -13,6 +14,8 @@ public class PlayerSkills : MonoBehaviour
     float nextFireFireBall = 0;
     public float fireRateChain = 0.05f;
     float nextFireChain = 0;
+    public float fireRatePoison = 0.05f;
+    float nextFirePoison = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -33,10 +36,10 @@ public class PlayerSkills : MonoBehaviour
             nextFireChain = Time.time + fireRateChain;
             ChainLightning();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && Time.time > nextFireFireBall)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && Time.time > nextFirePoison)
         {
-            nextFireFireBall = Time.time + fireRateFireBall;
-            Fireball();
+            nextFirePoison = Time.time + fireRatePoison;
+            PoisonBottle();
         }
 
         if (Input.GetMouseButtonDown(0) && GameObject.Find("Weapon(Clone)") == null) {
@@ -57,8 +60,12 @@ public class PlayerSkills : MonoBehaviour
     {
         projectilePos = transform.position;
         GameObject chainLightning = Instantiate(chainProjectile, projectilePos, Quaternion.identity);
+    }
 
-        Physics2D.IgnoreCollision(chainLightning.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+    private void PoisonBottle()
+    {
+        projectilePos = transform.position;
+        GameObject poisonBottle = Instantiate(poisonProjectile, projectilePos, Quaternion.identity);
     }
 
     private void Attack()

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Skill : MonoBehaviour
 {
-    
     protected Rigidbody2D rb;
     protected Vector3 startingPos;
 
