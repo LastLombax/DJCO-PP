@@ -16,7 +16,7 @@ public class AntonioCoelho : Enemy
     private int ammo = 15;
     private float attackSpeed = 1;
 
-    private bool phase = 0;
+    private bool phase = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public class AntonioCoelho : Enemy
             attackSpeed *= 2;
 
         if (Time.time > nextFire) {
-            nextShotTime
+            //nextShotTime;
             shoot();
         }
     }
@@ -52,10 +52,10 @@ public class AntonioCoelho : Enemy
         nextFire = Time.time + Random.Range(minFireRate / attackSpeed, maxFireRate / attackSpeed);
     }
 
-    private shoot()
+    private void shoot()
     {
         var projPos = transform.position;
-        var shot;
+        GameObject shot = null;
         if (phase)
             shot = Instantiate(projectileCLose, projPos, Quaternion.identity);
         else
