@@ -6,6 +6,8 @@ public class Skill : MonoBehaviour
 {
     protected Rigidbody2D rb;
     protected Vector3 startingPos;
+    protected float velX;
+    protected float velY;
 
     protected void Setup(){
         startingPos = transform.position;

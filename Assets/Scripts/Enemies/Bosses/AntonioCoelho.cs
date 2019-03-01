@@ -42,7 +42,11 @@ public class AntonioCoelho : Enemy
             attackSpeed *= 2;
 
         if (Time.time > nextFire) {
+<<<<<<< HEAD
+           // nextShotTime
+=======
             //nextShotTime;
+>>>>>>> 2f242a40c88b3abb218ebb89a33702f8862ca093
             shoot();
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponScript : MonoBehaviour
 {
     Rigidbody2D rb;
-    public float offsetAng = 40;
+    public float offsetAng = 60;
 
     private GameObject player;
 
@@ -29,8 +29,7 @@ public class WeaponScript : MonoBehaviour
         endAng = midAng - offsetAng;
 
         var rotationVector = transform.rotation.eulerAngles;
-        rotationVector.z = (-currentAng + 90)%360;
-        Debug.Log(rotationVector.z);
+        rotationVector.z = (-currentAng + 150)%360;
         transform.rotation = Quaternion.Euler(rotationVector);
     }
 

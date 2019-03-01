@@ -6,11 +6,10 @@ using UnityEngine;
 public class ChainScript : Skill
 {
     private ArrayList enemiesVisited = new ArrayList();
-    public int numberBounces;
-    private float velX;
-    private float velY;
     public float velocity;
     public float range;
+    public float damage;
+    public int numberBounces;
     private GameObject nearestEnemy;
     private bool returning = false;
 
@@ -67,6 +66,13 @@ public class ChainScript : Skill
         }
             
 
+    }
+
+    public void GiveStats(float rangeStat, float damageStat, int numberBouncesStat)
+    {
+        range = rangeStat;
+        damage = damageStat;
+        numberBounces = numberBouncesStat;
     }
 
     GameObject GetClosestEnemy()
