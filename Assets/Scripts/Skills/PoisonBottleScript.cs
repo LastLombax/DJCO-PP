@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PoisonBottleScript : Skill
 {
-    public float velX;
-    public float velY;
     public float velocity;
     public float range;
     public GameObject poisonPuddle;
