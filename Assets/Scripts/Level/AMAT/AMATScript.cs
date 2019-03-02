@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AMATScript : MonoBehaviour, LevelScript
 {
-    private GameObject mainCamera, player;
+    private GameObject mainCamera, player, chair;
     private int currentRoom;
 
     private Vector3 playerNewPos;
@@ -15,6 +15,7 @@ public class AMATScript : MonoBehaviour, LevelScript
     {
         mainCamera = GameObject.Find("Main Camera"); 
         player = GameObject.Find("Player");
+        chair = GameObject.Find("Chair");
         currentRoom = 1;
     }
 

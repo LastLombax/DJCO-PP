@@ -20,28 +20,34 @@ public class RuiRibeiro : MonoBehaviour
     public Text bossScore;
     public Text CountdownUI;
 
+    public GameObject Canvas_BossBattle;
+    public DialogueManager dm;
     public GameManager gm;
     private bool over = false;
-    private int countdown = 3;
-    
+    private int countdown = 4;
+
     void Update(){
-        if(countdown == 0){
-            CountdownUI.gameObject.SetActive(false);
-            if (!over){
-                ManageGame();
+        if (dm.dialogueEnd){
+            if (!Canvas_BossBattle.activeSelf)
+                Canvas_BossBattle.SetActive(true);
+            if(countdown == 0){
+                CountdownUI.gameObject.SetActive(false);
+                if (!over){
+                    ManageGame();
+                }
+                else {
+                    if (bossPoints >= objetive)
+                        Debug.Log("Era so fazer as continhas... tás chumbado");
+                    else if (playerPoints >= objetive)
+                        Debug.Log("Passaste");
+                    StartCoroutine(gm.Load2Scene("MainRoom"));
+                }
             }
-            else {
-                if (bossPoints >= objetive)
-                    Debug.Log("Era so fazer as continhas... tás chumbado");
-                else if (playerPoints >= objetive)
-                    Debug.Log("Passaste");
-                StartCoroutine(gm.Load2Scene("MainRoom"));
+            else if (Time.time > nextCoolDownTime ) {
+                nextCoolDownTime = Time.time + 1;
+                countdown--;
+                CountdownUI.text = "Round " + phase + ": " + countdown.ToString("0");
             }
-        }
-        else if (Time.time > nextCoolDownTime ) {
-            nextCoolDownTime = Time.time + 1;
-            countdown--;
-            CountdownUI.text = countdown.ToString("0");
         }
     }
 
@@ -83,7 +89,7 @@ public class RuiRibeiro : MonoBehaviour
         bossPeriod = newBossPeriod;
         playerPoints = 0;
         bossPoints = 0;
-        countdown = 3;
+        countdown = 4;
         CountdownUI.gameObject.SetActive(true);
     }
 
