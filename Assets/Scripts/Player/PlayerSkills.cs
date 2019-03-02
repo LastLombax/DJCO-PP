@@ -10,9 +10,9 @@ public class PlayerSkills : MonoBehaviour
     public GameObject poisonProjectile;
     public float weaponDistance = 1.5f;
     public GameObject weapon;
-    float nextFireFireBall = 0;
-    float nextFireChain = 0;
-    float nextFirePoison = 0;
+    public float nextFireFireBall = 0;
+    public float nextFireChain = 0;
+    public float nextFirePoison = 0;
 
     protected CharacterStat fireBallRange;
     protected CharacterStat fireBallCooldown;
@@ -30,15 +30,15 @@ public class PlayerSkills : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fireBallRange = new CharacterStat(15); //initial range = 15
+        fireBallRange = new CharacterStat(10); //initial range = 10
         fireBallCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         fireBallDamage = new CharacterStat(20); //inital damage of 20
         fireBallProjectilesNumber = new CharacterStat(1); //only one projectile in the beginning
-        chainRange = new CharacterStat(15); //initial range = 15
+        chainRange = new CharacterStat(5); //initial range = 5
         chainCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         chainDamage = new CharacterStat(5); //inital damage of 5
         chainNumberBounces = new CharacterStat(2); //initial 2 bounces
-        poisonRange = new CharacterStat(15); //initial range = 15
+        poisonRange = new CharacterStat(10); //initial range = 10
         poisonCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         poisonDamage = new CharacterStat(5); //inital damage of 5
         poisonTime = new CharacterStat(2); //initial time = 2 seconds
@@ -86,20 +86,20 @@ public class PlayerSkills : MonoBehaviour
     private void PoisonBottle()
     {
         GameObject poisonBottle = Instantiate(poisonProjectile, transform.position, Quaternion.identity);
+        poisonBottle.GetComponent<PoisonBottleScript>().GiveStats(poisonRange.Value, poisonDamage.Value, poisonTime.Value);
     }
 
     private void Attack()
     {
-
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePosition - transform.position;
+        Vector2 direction = mousePosition - transform.position;
         Vector3 dirNormalized = direction.normalized;
-        float dirX = Mathf.Cos(- Mathf.PI / 3 + Mathf.Acos(dirNormalized.x)) * direction.x;
-        float dirY = Mathf.Sin(- Mathf.PI / 3 + Mathf.Asin(dirNormalized.y)) * direction.y;
-        direction = new Vector3(dirX, dirY, 0);
-        Debug.Log(direction);
+        float dirX = Mathf.Cos(Mathf.PI / 3 + Mathf.Atan2(dirNormalized.y,dirNormalized.x));
+        float dirY = Mathf.Sin(Mathf.PI / 3 + Mathf.Atan2(dirNormalized.y, dirNormalized.x));
+        Vector3 directionShifted = new Vector3(dirX, dirY, 0);
+        Debug.Log(dirX);
      
-        Vector3 weaponPos = transform.position + dirNormalized * weaponDistance;
+        Vector3 weaponPos = transform.position + directionShifted * weaponDistance;
 
         var attack = Instantiate(weapon, weaponPos, Quaternion.identity);
 

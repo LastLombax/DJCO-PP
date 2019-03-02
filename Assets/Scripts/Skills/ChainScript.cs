@@ -19,11 +19,11 @@ public class ChainScript : Skill
         nearestEnemy = GetClosestEnemy();
         if (nearestEnemy == null)
         {
+            GameObject.Find("Player").GetComponent<PlayerSkills>().nextFireFireBall = 0;
             Destroy(gameObject);
             return;
         }
         Setup();
-        
     }
 
     // Update is called once per frame
@@ -48,6 +48,7 @@ public class ChainScript : Skill
         }
         if (collision.gameObject.tag == "Enemy")
         {
+            collision.gameObject.GetComponent<Enemy>().DmgCollision(damage * -1);
             if (numberBounces == 0)
             {
                 returning = true;
@@ -90,7 +91,7 @@ public class ChainScript : Skill
                 continue;
             }
             Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
+            float curDistance = Mathf.Sqrt(Mathf.Pow(diff.x, 2) + Mathf.Pow(diff.y, 2));
             if (curDistance < distance)
             {
                 closest = go;

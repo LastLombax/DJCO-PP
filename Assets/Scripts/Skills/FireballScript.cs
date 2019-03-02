@@ -26,8 +26,8 @@ public class FireballScript : Skill
     void Update()
     {
         rb.velocity = new Vector2(velX, velY);
-        Debug.Log((transform.position - startingPos).magnitude);
-        if((transform.position - startingPos).magnitude > range)
+        Vector3 direction = transform.position - startingPos;
+        if (Mathf.Sqrt(Mathf.Pow(direction.x, 2) + Mathf.Pow(direction.y, 2)) > range)
         {
             Destroy(gameObject);
         }

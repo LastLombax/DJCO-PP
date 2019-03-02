@@ -6,8 +6,11 @@ public class PoisonBottleScript : Skill
 {
     public float velocity;
     public float range;
-    public GameObject poisonPuddle;
+    public float damage;
     private float stopLenght;
+    private float puddleDuration;
+    public GameObject poisonPuddle;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +33,17 @@ public class PoisonBottleScript : Skill
         rb.velocity = new Vector2(velX, velY);
         if ((transform.position - startingPos).magnitude > stopLenght)
         {
-            var projectilePos = transform.position;
-            GameObject poisonBottle = Instantiate(poisonPuddle, projectilePos, Quaternion.identity);
+            GameObject poisonPuddleInstantiate = Instantiate(poisonPuddle, transform.position, Quaternion.identity);
+            poisonPuddleInstantiate.GetComponent<PoisonPuddleScript>().GiveStats(damage, puddleDuration);
             Destroy(gameObject);
         }
+    }
+
+    public void GiveStats(float rangeStat, float damageStat, float puddleDurationStat)
+    {
+        range = rangeStat;
+        damage = damageStat;
+        puddleDuration = puddleDurationStat;
     }
 
 

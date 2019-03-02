@@ -36,12 +36,6 @@ public abstract class Enemy : MonoBehaviour
     }
 
     public void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.name == "Weapon(Clone)")
-            DmgCollision(-2);
-        if (collision.gameObject.name == "Fireball(Clone)")
-            DmgCollision(-2);
-        if (collision.gameObject.name == "chain(Clone)")
-            DmgCollision(-1);
         if (collision.gameObject.name == "RangedShot(Clone)")
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
     }
