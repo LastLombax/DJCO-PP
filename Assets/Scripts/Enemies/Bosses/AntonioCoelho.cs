@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Kryz.CharacterStats;
 using UnityEngine;
 
 public class AntonioCoelho : Enemy
@@ -17,11 +18,18 @@ public class AntonioCoelho : Enemy
     private float attackSpeed = 1;
 
     private bool phase = false;
+    private string[] movementTypes = new string[] {"Up, Down, Left"};
+    private string movement;
+    private float nextMovement;
+    private float currentMovementDuration;
+    private float minMoveChangeTime = 1;
+    private float maxMoveChangeTime = 2;
 
     // Start is called before the first frame update
     void Start()
     {
-        nextShotTime();
+        NextShotTime();
+        NextMovement();
         player = GameObject.Find("Player");
         setStats(healthValue, speedValue);
     }
@@ -32,26 +40,44 @@ public class AntonioCoelho : Enemy
         EnemyRotation();
         EnemyMovement();
 
-        if (ammo <= 0)
+        if (ammo <= 0) {
             phase = !phase;
+            ammo = 15;
+        }
 
-        if (health.Value <= healthValue / 2 && attackSpeed == 1)
+        if (health.Value <= healthValue / 2 && attackSpeed == 1) {
             attackSpeed *= 2;
+            StatModifier mod = new StatModifier(25, StatModType.PercentAdd);
+            speed.AddModifier(mod);
+        }
 
-        if (health.Value <= healthValue / 4 && attackSpeed == 2)
+        if (health.Value <= healthValue / 4 && attackSpeed == 2) {
             attackSpeed *= 2;
+            StatModifier mod = new StatModifier(25, StatModType.PercentAdd);
+            speed.AddModifier(mod);
+        }
 
-        if (Time.time > nextFire) {
-            shoot();
+        if (Time.time >= nextFire) {
+            Shoot();
+            NextShotTime();
+        }
+
+        if (Time.time >= nextMovement) {
+            if (movement != "Left") {
+                NextMovement();
+            } else {
+                movement = "Right";
+                nextMovement = Time.time + currentMovementDuration;
+            }
         }
     }
 
-    private void nextShotTime()
+    private void NextShotTime()
     {
         nextFire = Time.time + Random.Range(minFireRate / attackSpeed, maxFireRate / attackSpeed);
     }
 
-    private void shoot()
+    private void Shoot()
     {
         var projPos = transform.position;
         GameObject shot = null;
@@ -61,5 +87,35 @@ public class AntonioCoelho : Enemy
             shot = Instantiate(projectileOpen, projPos, Quaternion.identity);
         Physics2D.IgnoreCollision(shot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         ammo--;
+    }
+
+    private void NextMovement()
+    {
+        movement = movementTypes[Random.Range(0, movementTypes.Length)];
+        currentMovementDuration = Random.Range(minMoveChangeTime, maxMoveChangeTime);
+        nextMovement = Time.time + currentMovementDuration;
+        Debug.Log(movement);
+    }
+
+    private void EnemyMovement()
+    {
+        Vector3 moveVec = new Vector3(0f,0f,0f);
+        switch(movement) {
+            case "Up":
+                moveVec = new Vector3(0f, 1f, 0f);
+                break;
+            case "Down":
+                moveVec = new Vector3(0f, -1f, 0f);
+                break;
+            case "Left":
+                moveVec = new Vector3(-1f, 0f, 0f);
+                break;
+            case "Right":
+                moveVec = new Vector3(1f, 0f, 0f);
+                break;
+            default:
+                break;
+        }
+        transform.position = transform.position + moveVec * speed.Value;
     }
 }
