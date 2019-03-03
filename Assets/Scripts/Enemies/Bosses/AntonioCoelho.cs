@@ -116,6 +116,6 @@ public class AntonioCoelho : Enemy
             default:
                 break;
         }
-        transform.position = transform.position + moveVec * speed.Value;
+        transform.position += moveVec * speed.Value;
     }
 }

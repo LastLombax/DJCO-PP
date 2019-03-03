@@ -425,5 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e0d35e67258f84c8eaef381822156a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileOpen: {fileID: 0}
-  projectileCLose: {fileID: 0}
+  projectileOpen: {fileID: 2406793922585399121, guid: a93de83773420ff4f8c46a821e538e92,
+    type: 3}
+  projectileCLose: {fileID: 2625414307882131617, guid: 3805fb7f001f90b4699af89a9551bdc2,
+    type: 3}
