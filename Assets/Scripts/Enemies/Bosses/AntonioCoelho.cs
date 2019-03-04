@@ -18,8 +18,7 @@ public class AntonioCoelho : Enemy
     private float attackSpeed = 1;
 
     private bool phase = false;
-    private string[] movementTypes = new string[] {"Up, Down, Left"};
-    private string movement;
+    private int movement;
     private float nextMovement;
     private float currentMovementDuration;
     private float minMoveChangeTime = 1;
@@ -57,16 +56,17 @@ public class AntonioCoelho : Enemy
             speed.AddModifier(mod);
         }
 
-        if (Time.time >= nextFire) {
-            Shoot();
-            NextShotTime();
-        }
+        // if (Time.time >= nextFire) {
+        //     Shoot();
+        //     NextShotTime();
+        // }
+        
 
         if (Time.time >= nextMovement) {
-            if (movement != "Left") {
+            if (movement != 2) {
                 NextMovement();
             } else {
-                movement = "Right";
+                movement = 3;
                 nextMovement = Time.time + currentMovementDuration;
             }
         }
@@ -91,26 +91,26 @@ public class AntonioCoelho : Enemy
 
     private void NextMovement()
     {
-        movement = movementTypes[Random.Range(0, movementTypes.Length)];
+        movement = Random.Range(0, 3);
+        Debug.Log(movement);
         currentMovementDuration = Random.Range(minMoveChangeTime, maxMoveChangeTime);
         nextMovement = Time.time + currentMovementDuration;
-        Debug.Log(movement);
     }
 
     private void EnemyMovement()
     {
         Vector3 moveVec = new Vector3(0f,0f,0f);
         switch(movement) {
-            case "Up":
+            case 0:
                 moveVec = new Vector3(0f, 1f, 0f);
                 break;
-            case "Down":
+            case 1:
                 moveVec = new Vector3(0f, -1f, 0f);
                 break;
-            case "Left":
+            case 2:
                 moveVec = new Vector3(-1f, 0f, 0f);
                 break;
-            case "Right":
+            case 3:
                 moveVec = new Vector3(1f, 0f, 0f);
                 break;
             default:
