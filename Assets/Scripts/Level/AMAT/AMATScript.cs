@@ -50,13 +50,6 @@ public class AMATScript : MonoBehaviour, LevelScript
                     break;                   
                 }
             break;
-          /*   case 3:
-                switch(currentRoom){
-                    case 1:
-                        mainCamera.transform.position+=new Vector3(40.5f, 0, 0); //Room 2
-                    break;
-                }
-            break;*/
         } 
         player.transform.position += playerNewPos;
         //GameObject.Find("Room" + currentRoom).SetActive(true);
