@@ -400,13 +400,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6726811728889640192, guid: b62c2ef06a464c645a484bb59aeb8d1c,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726811728889640192, guid: b62c2ef06a464c645a484bb59aeb8d1c,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 260055497}
     - target: {fileID: 6726811728889640192, guid: b62c2ef06a464c645a484bb59aeb8d1c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AOCOLevel
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726811728889640192, guid: b62c2ef06a464c645a484bb59aeb8d1c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726811728889640192, guid: b62c2ef06a464c645a484bb59aeb8d1c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Scenes/Levels/AOCO
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726811728889640192, guid: b62c2ef06a464c645a484bb59aeb8d1c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726811728889640192, guid: b62c2ef06a464c645a484bb59aeb8d1c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726811728889640192, guid: b62c2ef06a464c645a484bb59aeb8d1c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b62c2ef06a464c645a484bb59aeb8d1c, type: 3}
@@ -704,7 +734,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapUI: {fileID: 394407664}
-  Player: {fileID: 0}
 --- !u!4 &260055498
 Transform:
   m_ObjectHideFlags: 0
@@ -1810,6 +1839,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4670031726849965114, guid: 492b922924e75a6458e1ca9da4e59f61,
+        type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 260055496}
+    - target: {fileID: 4670031726849965114, guid: 492b922924e75a6458e1ca9da4e59f61,
+        type: 3}
+      propertyPath: skillTree
+      value: 
+      objectReference: {fileID: 1225982146}
     - target: {fileID: 2839172275851815239, guid: 492b922924e75a6458e1ca9da4e59f61,
         type: 3}
       propertyPath: map
@@ -1825,17 +1864,8 @@ PrefabInstance:
       propertyPath: skillTree
       value: 
       objectReference: {fileID: 1225982146}
-    - target: {fileID: 4670031726849965114, guid: 492b922924e75a6458e1ca9da4e59f61,
-        type: 3}
-      propertyPath: map
-      value: 
-      objectReference: {fileID: 260055496}
-    - target: {fileID: 4670031726849965114, guid: 492b922924e75a6458e1ca9da4e59f61,
-        type: 3}
-      propertyPath: skillTree
-      value: 
-      objectReference: {fileID: 1225982146}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2524527934507165273, guid: 492b922924e75a6458e1ca9da4e59f61, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 492b922924e75a6458e1ca9da4e59f61, type: 3}
 --- !u!1 &1225982146
 GameObject:
@@ -1867,7 +1897,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillTreeUI: {fileID: 2001334041}
-  Player: {fileID: 0}
 --- !u!4 &1225982148
 Transform:
   m_ObjectHideFlags: 0

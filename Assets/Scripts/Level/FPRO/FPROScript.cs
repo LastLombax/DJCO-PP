@@ -7,6 +7,7 @@ public class FPROScript : MonoBehaviour, LevelScript
     private GameObject mainCamera, player, chair;
     private int currentRoom;
 
+    public GameObject[] rooms;
     private Vector3 playerNewPos;
     
     private int roomChangeOffset = 5;
@@ -15,36 +16,38 @@ public class FPROScript : MonoBehaviour, LevelScript
     {
         mainCamera = GameObject.Find("Main Camera"); 
         player = GameObject.Find("Player");
-        currentRoom = 1;
+        currentRoom = 0;
+        rooms[currentRoom].SetActive(true);
+        for (int i = 1; i < rooms.Length; i++)
+            rooms[i].SetActive(false);
     }
 
     public void ChangeRoom(int doorID){
-        //GameObject.Find("Room" + currentRoom).SetActive(false);
-                Debug.Log("previous room" + currentRoom);
+        rooms[currentRoom].SetActive(false);
 
         switch(doorID){
             case 1:
                 switch(currentRoom){
-                    case 1:
+                    case 0:
                         mainCamera.transform.position+=new Vector3(40.4f, 32, 0); //Room 2
-                        currentRoom++;
+                        currentRoom = 1;
                         playerNewPos = new Vector3(roomChangeOffset, 0, 0);
                     break;
-                    case 2:
+                    case 1:
                         mainCamera.transform.position+=new Vector3(-40.4f, -32, 0); //Room 1
-                        currentRoom --;
+                        currentRoom = 0;
                         playerNewPos = new Vector3(-roomChangeOffset, 0, 0);
                     break;                   
             }
             break;
             case 2:
                 switch(currentRoom){
-                    case 2:
+                    case 1:
                         mainCamera.transform.position+=new Vector3(40.4f, 32, 0); //Room 3
                         currentRoom++;
                         playerNewPos = new Vector3(roomChangeOffset, 0, 0);
                     break;
-                    case 3:
+                    case 2:
                         mainCamera.transform.position+=new Vector3(-40.4f, -32, 0); //Room 2
                         currentRoom --;
                         playerNewPos = new Vector3(-roomChangeOffset, 0, 0);
@@ -53,12 +56,12 @@ public class FPROScript : MonoBehaviour, LevelScript
             break;
             case 3:
                 switch(currentRoom){
-                    case 3:
+                    case 2:
                         mainCamera.transform.position+=new Vector3(40.4f, 32, 0); //Room 3
                         currentRoom++;
                         playerNewPos = new Vector3(roomChangeOffset, 0, 0);
                     break;
-                    case 4:
+                    case 3:
                         mainCamera.transform.position+=new Vector3(-40.4f, -32, 0); //Room 2
                         currentRoom --;
                         playerNewPos = new Vector3(-roomChangeOffset, 0, 0);
@@ -67,49 +70,50 @@ public class FPROScript : MonoBehaviour, LevelScript
             break;
             case 4:
                 switch(currentRoom){
-                    case 4:
-                        mainCamera.transform.position+=new Vector3(-33.4f, 38, 0); //Room 5
+                    case 3:
+                        mainCamera.transform.position+=new Vector3(-38.4f, 37, 0); //Room 3
                         currentRoom++;
                         playerNewPos = new Vector3(0, roomChangeOffset, 0);
                     break;
-                    case 5:
-                        mainCamera.transform.position+=new Vector3(33.4f, -38, 0); //Room 4
-                        currentRoom--;
+                    case 4:
+                        mainCamera.transform.position+=new Vector3(+38.4f, -37, 0); //Room 2
+                        currentRoom --;
                         playerNewPos = new Vector3(0, -roomChangeOffset, 0);
                     break;                   
                 }
-            break; 
+            break;
             case 5:
                 switch(currentRoom){
-                    case 4:
+                    case 3:
                         mainCamera.transform.position+=new Vector3(32.8f, -40.5f, 0); //Room 3
-                        currentRoom = 6;
+                        currentRoom = 5;
                         playerNewPos = new Vector3(0, -roomChangeOffset, 0);
                     break;
-                    case 6:
+                    case 5:
                         mainCamera.transform.position+=new Vector3(-32.8f, 40.5f, 0); //Room 2
-                        currentRoom = 4;
+                        currentRoom = 3;
                         playerNewPos = new Vector3(0, roomChangeOffset, 0);
                     break;                   
                 }
             break;       
             case 6:
                 switch(currentRoom){
-                    case 6:
+                    case 5:
                         mainCamera.transform.position+=new Vector3(37.8f, -40f, 0); //Room 3
                         currentRoom = 6;
                         playerNewPos = new Vector3(0, -roomChangeOffset, 0);
                     break;
-                    case 7:
+                    case 6:
                         mainCamera.transform.position+=new Vector3(-37.8f, +40f, 0); //TODO: dar scale à camara
-                        currentRoom = 4;
+                        currentRoom = 5;
                         playerNewPos = new Vector3(0, roomChangeOffset, 0);
                     break;                   
                 }
             break;           
         } 
+
         player.transform.position += playerNewPos;
-        //GameObject.Find("Room" + currentRoom).SetActive(true);
-                                Debug.Log("new room" + currentRoom);
+        rooms[currentRoom].SetActive(true);
+
     }
 }

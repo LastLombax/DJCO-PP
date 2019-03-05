@@ -32,7 +32,10 @@ public class MapScript : MonoBehaviour
         MapUI.SetActive(false);
     }
 
-    public void AOCOLevel(){
-        SceneManager.LoadScene("SampleScene");
+    public void LoadLevel(string name)
+    {
+        Debug.Log("name: " + name);
+        SceneManager.LoadScene(name);
     }
+
 }

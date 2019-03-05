@@ -6,6 +6,8 @@ public class MDISScript : MonoBehaviour, LevelScript
 {
     private GameObject mainCamera, player, chair;
     private int currentRoom;
+    public GameObject[] rooms;
+
 
     private Vector3 playerNewPos;
     
@@ -15,22 +17,25 @@ public class MDISScript : MonoBehaviour, LevelScript
     {
         mainCamera = GameObject.Find("Main Camera"); 
         player = GameObject.Find("Player");
-        currentRoom = 1;
+        currentRoom = 0;
+        rooms[currentRoom].SetActive(true);
+        for (int i = 1; i < rooms.Length; i++)
+            rooms[i].SetActive(false);
     }
 
     public void ChangeRoom(int doorID){
-        //GameObject.Find("Room" + currentRoom).SetActive(false);
-                Debug.Log("previous room" + currentRoom);
+        rooms[currentRoom].SetActive(false);
+
 
         switch(doorID){
             case 1:
                 switch(currentRoom){
-                    case 1:
+                    case 0:
                         mainCamera.transform.position+=new Vector3(-40.4f,-32, 0); //Room 2
                         currentRoom++;
                         playerNewPos = new Vector3(-roomChangeOffset, 0, 0);
                     break;
-                    case 2:
+                    case 1:
                         mainCamera.transform.position+=new Vector3(40.4f, 32, 0); //Room 1
                         currentRoom --;
                         playerNewPos = new Vector3(roomChangeOffset, 0, 0);
@@ -39,21 +44,21 @@ public class MDISScript : MonoBehaviour, LevelScript
             break;
             case 2:
                 switch(currentRoom){
-                    case 2:
-                        mainCamera.transform.position+=new Vector3(0f, -36, 0); //Room 1
+                    case 1:
+                        mainCamera.transform.position+=new Vector3(0f, -39, 0); //Room 1
                         currentRoom++;
                         playerNewPos = new Vector3(0, -roomChangeOffset, 0);
                     break;
-                    case 3:
-                        mainCamera.transform.position+=new Vector3(0f, 36, 0); //Room 1
+                    case 2:
+                        mainCamera.transform.position+=new Vector3(0f, 39, 0); //Room 1
                         currentRoom --;
                         playerNewPos = new Vector3(0, roomChangeOffset, 0);
                     break;                   
                 }
             break;       
         } 
-        player.transform.position += playerNewPos;
-        //GameObject.Find("Room" + currentRoom).SetActive(true);
-                                Debug.Log("new room" + currentRoom);
+       player.transform.position += playerNewPos;
+       rooms[currentRoom].SetActive(true);
+
     }
 }
