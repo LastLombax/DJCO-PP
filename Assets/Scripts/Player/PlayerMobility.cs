@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMobility : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerMobility : MonoBehaviour
     {
         PlayerRotation();
         PlayerMovement();
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name != "MainRoom")
+            SceneManager.LoadScene("MainRoom");
     }
 
     private void PlayerRotation()

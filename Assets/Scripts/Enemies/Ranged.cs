@@ -34,6 +34,7 @@ public class Ranged : Enemy {
     {
         var projectilePos = transform.position;
         var shot = Instantiate(projectile, projectilePos, Quaternion.identity);
+        shot.transform.parent = this.transform;
         Physics2D.IgnoreCollision(shot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 }
