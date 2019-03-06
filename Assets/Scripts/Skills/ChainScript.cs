@@ -19,7 +19,7 @@ public class ChainScript : Skill
         nearestEnemy = GetClosestEnemy();
         if (nearestEnemy == null)
         {
-            GameObject.Find("Player").GetComponent<PlayerSkills>().nextFireFireBall = 0;
+            GameObject.Find("Player").GetComponent<PlayerSkills>().nextFireChain = 0;
             Destroy(gameObject);
             return;
         }
