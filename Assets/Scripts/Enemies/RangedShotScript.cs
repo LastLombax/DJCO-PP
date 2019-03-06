@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RangedShotScript : MonoBehaviour
 {
-    public float velX;
-    public float velY;
+    private float velX;
+    private float velY;
     public float velocity;
     public float range;
     Rigidbody2D rb;
