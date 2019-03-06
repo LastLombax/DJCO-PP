@@ -31,6 +31,10 @@ public class MapScript : MonoBehaviour
     {
         MapUI.SetActive(false);
     }
+    public void testF(int a, int b)
+    {
+        return;
+    }
 
     public void AOCOLevel(){
         SceneManager.LoadScene("SampleScene");
