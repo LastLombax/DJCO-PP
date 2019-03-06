@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface LevelScript
 {
+    
     void ChangeRoom(int doorID);
 }

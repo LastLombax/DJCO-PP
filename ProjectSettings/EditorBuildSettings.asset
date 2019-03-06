@@ -12,6 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/MainRoom.unity
     guid: 44643a94d1803664cbd096ee6972675a
   - enabled: 1
+    path: Assets/Scenes/Levels/ALGE.unity
+    guid: fb4d07bab3e67c74a81e01e73772d552
+  - enabled: 1
+    path: Assets/Scenes/Levels/AMAT.unity
+    guid: 0e351623a1e4ee843931887c8f354a34
+  - enabled: 1
+    path: Assets/Scenes/Levels/AOCO.unity
+    guid: 18c2f94d1e515e245ac64773d2f8e398
+  - enabled: 1
+    path: Assets/Scenes/Levels/FPRO.unity
+    guid: 3066670f61b5de34eb0700c7628fe387
+  - enabled: 1
+    path: Assets/Scenes/Levels/MDIS.unity
+    guid: 2e78d250fdf77b34686fa0b5f8b6dbc0
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: f83e9e4793bae2741b442e9f670cea2b
   m_configObjects: {}

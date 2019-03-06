@@ -36,7 +36,10 @@ public class MapScript : MonoBehaviour
         return;
     }
 
-    public void AOCOLevel(){
-        SceneManager.LoadScene("SampleScene");
+    public void LoadLevel(string name)
+    {
+        Debug.Log("name: " + name);
+        SceneManager.LoadScene(name);
     }
+
 }
