@@ -34,8 +34,7 @@ public class MapScript : MonoBehaviour
 
     public void LoadLevel(string name)
     {
-        Debug.Log("name: " + name);
-        SceneManager.LoadScene(name);
+        SceneManager.LoadScene(name, LoadSceneMode.Single);
     }
 
 }

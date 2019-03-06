@@ -97,7 +97,6 @@ public class PlayerSkills : MonoBehaviour
         float dirX = Mathf.Cos(Mathf.PI / 3 + Mathf.Atan2(dirNormalized.y,dirNormalized.x));
         float dirY = Mathf.Sin(Mathf.PI / 3 + Mathf.Atan2(dirNormalized.y, dirNormalized.x));
         Vector3 directionShifted = new Vector3(dirX, dirY, 0);
-        Debug.Log(dirX);
      
         Vector3 weaponPos = transform.position + directionShifted * weaponDistance;
 

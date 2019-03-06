@@ -17,7 +17,6 @@ public class PlayerMobility : MonoBehaviour
         Quaternion rot = Quaternion.LookRotation(transform.position - mousePosition, Vector3.forward);
 
         var ang = rot.eulerAngles.z;
-        //Debug.Log(rot.eulerAngles.z);
         if ((ang >= 0 && ang <= 45) || (ang <= 360 && ang >= 315))
         {
             anim.Play("PlayerAnimationUp");

@@ -37,7 +37,6 @@ public class WeaponScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(rotationSpeed);
         if (currentAng <= endAng)
            Destroy(gameObject);   
         else
