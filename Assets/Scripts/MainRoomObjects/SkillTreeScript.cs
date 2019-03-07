@@ -21,6 +21,7 @@ public class SkillTreeScript : MonoBehaviour
 
         CreateSkillTreeFireBall();
         CreateSkillTreeChainLightning();
+        CreateSkillTreePoisonPuddle();
     }
 
     private void CreateSkillTreeFireBall()
@@ -137,6 +138,62 @@ public class SkillTreeScript : MonoBehaviour
         nodes.Add(chain19.id, chain19);
     }
 
+    private void CreateSkillTreePoisonPuddle()
+    {
+        SkillTreeNode poison1 = new SkillTreeNode("poison1"); // first node of the poison tree. Gives +20%dmg
+        SkillTreeNode poison2 = new SkillTreeNode("poison2"); // father is poison1. Gives -20%cd
+        poison2.fathers.Add(poison1.id);
+        SkillTreeNode poison3 = new SkillTreeNode("poison3"); // father is poison1. Gives +30%dmg
+        poison3.fathers.Add(poison1.id);
+        SkillTreeNode poison4 = new SkillTreeNode("poison4"); // father is poison1. Gives +5range
+        poison4.fathers.Add(poison1.id);
+        SkillTreeNode poison5 = new SkillTreeNode("poison5"); // father is poison2. Gives -10%cd
+        poison5.fathers.Add(poison2.id);
+        SkillTreeNode poison6 = new SkillTreeNode("poison6"); // father are poison2 and poison3. Gives +20%dmg
+        poison6.fathers.Add(poison2.id); poison6.fathers.Add(poison3.id);
+        SkillTreeNode poison7 = new SkillTreeNode("poison7"); // father are poison3 and poison4. Gives +30%dmg
+        poison7.fathers.Add(poison3.id); poison7.fathers.Add(poison4.id);
+        SkillTreeNode poison8 = new SkillTreeNode("poison8"); // father is poison4. Gives -20%cd
+        poison8.fathers.Add(poison4.id);
+        SkillTreeNode poison9 = new SkillTreeNode("poison9"); // father is poison5. Gives +5range
+        poison9.fathers.Add(poison5.id);
+        SkillTreeNode poison10 = new SkillTreeNode("poison10"); // father is poison6. Gives -20%cd
+        poison10.fathers.Add(poison6.id);
+        SkillTreeNode poison11 = new SkillTreeNode("poison11"); // father are poison6 and poison7. Gives +50%ToE
+        poison11.fathers.Add(poison6.id); poison11.fathers.Add(poison7.id);
+        SkillTreeNode poison12 = new SkillTreeNode("poison12"); // father are poison7 and poison8. Gives +20%dmg
+        poison12.fathers.Add(poison7.id); poison12.fathers.Add(poison8.id);
+        SkillTreeNode poison13 = new SkillTreeNode("poison13"); // father is poison8. Gives +50%ToE
+        poison13.fathers.Add(poison8.id);
+        SkillTreeNode poison14 = new SkillTreeNode("poison14"); // father is poison9. Gives +50%dmg
+        poison14.fathers.Add(poison9.id);
+        SkillTreeNode poison15 = new SkillTreeNode("poison15"); // father are poison10 and poison11. Gives +30%dmg
+        poison15.fathers.Add(poison10.id); poison15.fathers.Add(poison11.id);
+        SkillTreeNode poison16 = new SkillTreeNode("poison16"); // father is poison12. Gives +10range
+        poison16.fathers.Add(poison12.id);
+        SkillTreeNode poison17 = new SkillTreeNode("poison17"); // father are poison14 and poison15. Gives -20%cd
+        poison17.fathers.Add(poison14.id); poison17.fathers.Add(poison15.id);
+        SkillTreeNode poison18 = new SkillTreeNode("poison18"); // father are poison16 and poison17. Gives +100%dmg
+        poison18.fathers.Add(poison16.id); poison18.fathers.Add(poison17.id);
+        nodes.Add(poison1.id, poison1);
+        nodes.Add(poison2.id, poison2);
+        nodes.Add(poison3.id, poison3);
+        nodes.Add(poison4.id, poison4);
+        nodes.Add(poison5.id, poison5);
+        nodes.Add(poison6.id, poison6);
+        nodes.Add(poison7.id, poison7);
+        nodes.Add(poison8.id, poison8);
+        nodes.Add(poison9.id, poison9);
+        nodes.Add(poison10.id, poison10);
+        nodes.Add(poison11.id, poison11);
+        nodes.Add(poison12.id, poison12);
+        nodes.Add(poison13.id, poison13);
+        nodes.Add(poison14.id, poison14);
+        nodes.Add(poison15.id, poison15);
+        nodes.Add(poison16.id, poison16);
+        nodes.Add(poison17.id, poison17);
+        nodes.Add(poison18.id, poison18);
+    }
     public void Update(){
         if (SkillTreeUI.activeSelf){
             player.transform.position = PlayerPos;
