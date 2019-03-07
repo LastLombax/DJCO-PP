@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2524527934507165248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.69, y: -2.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbf752db9e7a814fa20f1884bbd771e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.3
   anim: {fileID: 4670031726849965117}
 --- !u!114 &4670031726849965115
 MonoBehaviour:
@@ -179,11 +179,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    BaseValue: 0
+    BaseValue: 5
   energy:
     BaseValue: 0
   speed:
-    BaseValue: 0
+    BaseValue: 0.1
 --- !u!114 &4670031726849965114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,11 +211,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3f9a88187a36c4fa5e212d2d356d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileFireBall: {fileID: 4995583231741423883, guid: 0e6b8ab1640e6e64eb8ab98b7d6a267a,
+  fireBallProjectile: {fileID: 3363167216506423389, guid: 0e6b8ab1640e6e64eb8ab98b7d6a267a,
     type: 3}
-  chainProjectile: {fileID: 6928458116361970120, guid: 24825ff3dd2ebcd49a8f3f0449c5c711,
+  chainProjectile: {fileID: 2919056998180085588, guid: 24825ff3dd2ebcd49a8f3f0449c5c711,
     type: 3}
-  weaponDistance: 1.5
-  weapon: {fileID: 7815876761519203673, guid: 6b6c7c40ebbcf94418817db4cbdda3fe, type: 3}
-  fireRateFireBall: 0.05
-  fireRateChain: 0.05
+  poisonProjectile: {fileID: 7343375271918280030, guid: ff70949471181da458bffbf8446ed3c1,
+    type: 3}
+  weaponDistance: 4.5
+  weapon: {fileID: 8057305092415899449, guid: 6b6c7c40ebbcf94418817db4cbdda3fe, type: 3}
+  nextFireFireBall: 0
+  nextFireChain: 0
+  nextFirePoison: 0
