@@ -14,6 +14,8 @@ public class PlayerSkills : MonoBehaviour
     public float nextFireChain = 0;
     public float nextFirePoison = 0;
 
+    private int xp;
+
     protected CharacterStat fireBallRange;
     protected CharacterStat fireBallCooldown;
     protected CharacterStat fireBallDamage;
@@ -30,6 +32,7 @@ public class PlayerSkills : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        xp = 0;
         fireBallRange = new CharacterStat(10); //initial range = 10
         fireBallCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         fireBallDamage = new CharacterStat(20); //inital damage of 20
@@ -150,5 +153,24 @@ public class PlayerSkills : MonoBehaviour
                 poisonTime.AddModifier(modifierPercAdd);
                 break;
         }
+    }
+
+    public bool HasEnoughXP(int xpNeeded)
+    {
+        return xpNeeded >= this.xp;
+    }
+
+    public void UseXP(int xpUsed)
+    {
+        if(xp < xpUsed)
+        {
+            Debug.Log("Not enough xp for that");
+        }
+        xp -= xpUsed;
+    }
+
+    public void GainXP(int xpGained)
+    {
+        xp += xpGained;
     }
 }
