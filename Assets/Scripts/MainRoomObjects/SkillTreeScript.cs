@@ -113,9 +113,9 @@ public class SkillTreeScript : MonoBehaviour
         SkillTreeNode chain17 = new SkillTreeNode("chain17"); // father are chain13 and chain14. Gives +50%dmg
         chain17.fathers.Add(chain13.id); chain17.fathers.Add(chain14.id);
         SkillTreeNode chain18 = new SkillTreeNode("chain18"); // father is chain15. Gives +40%dmg
-        chain17.fathers.Add(chain15.id);
+        chain18.fathers.Add(chain15.id);
         SkillTreeNode chain19 = new SkillTreeNode("chain19"); // father are chain16 and chain17. Gives +100%dmg
-        chain17.fathers.Add(chain16.id); chain17.fathers.Add(chain17.id);
+        chain19.fathers.Add(chain16.id); chain19.fathers.Add(chain17.id);
         nodes.Add(chain1.id, chain1);
         nodes.Add(chain2.id, chain2);
         nodes.Add(chain3.id, chain3);
