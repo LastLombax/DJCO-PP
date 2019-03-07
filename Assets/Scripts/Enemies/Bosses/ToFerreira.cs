@@ -3,24 +3,21 @@ using System.Collections.Generic;
 using Kryz.CharacterStats;
 using UnityEngine;
 
-public class AntonioCoelho : Enemy
+public class ToFerreira : Enemy
 {
 
     public GameObject projectile;
-    public GameObject projectile2;
     private float healthValue = 50f;
-    private float speedValue = 0.2f;
+    private float speedValue = 0.1f;
     private Vector3 upperBound;
     private Vector3 lowerBound;
-
-    private float minFireRate = 0.3f;
-    private float maxFireRate = 0.7f;
-    private float nextFire = 0;
-    private int ammo = 15;
-    private float attackSpeed = 1;
-
     private int shotRange = 55;
-    private bool phase = false;
+
+    private float minFireRate = 0.5f;
+    private float maxFireRate = 1f;
+    private float nextFire = 0;
+    private int ammo = 7;
+    private float attackSpeed = 1;
     private int movement;
     private float nextMovement;
     private float currentMovementDuration;
@@ -45,9 +42,8 @@ public class AntonioCoelho : Enemy
         EnemyMovement();
 
         if (ammo <= 0) {
-            phase = !phase;
-            nextFire += 5;
-            ammo = 15;
+            nextFire += 4;
+            ammo = 7;
         }
 
         if (health.Value <= healthValue / 2 && attackSpeed == 1) {
@@ -71,10 +67,10 @@ public class AntonioCoelho : Enemy
         
 
         if (Time.time >= nextMovement) {
-            if (movement != 2) {
+            if (movement != 3) {
                 NextMovement();
             } else {
-                movement = 3;
+                movement = 2;
                 nextMovement = Time.time + currentMovementDuration;
             }
         }
@@ -88,14 +84,10 @@ public class AntonioCoelho : Enemy
     private void Shoot()
     {
         var projPos = transform.position;
-        GameObject parenthesis = null;
-        if (phase){
-            parenthesis = Instantiate(projectile2, projPos, Quaternion.identity);
-        } else {
-            parenthesis = Instantiate(projectile, projPos, Quaternion.identity);
-        }
-        parenthesis.GetComponent<RangedShotScript>().range = shotRange;
-        Physics2D.IgnoreCollision(parenthesis.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        GameObject basketBall = Instantiate(projectile, projPos, Quaternion.identity);
+        basketBall.GetComponent<RangedShotScript>().range = shotRange;
+
+        Physics2D.IgnoreCollision(basketBall.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         ammo--;
     }
 

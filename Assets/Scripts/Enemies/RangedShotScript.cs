@@ -40,8 +40,9 @@ public class RangedShotScript : MonoBehaviour
             collider.gameObject.GetComponent<PlayerCollision>().EnemyCollision(collider);
             Destroy(gameObject);
         }
-        if (collider.gameObject.tag == "Enemy") 
+        if (collider.gameObject.tag == "Enemy" || collider.gameObject.tag == "Wall") 
             Destroy(gameObject);
+        
     }
 
 }
