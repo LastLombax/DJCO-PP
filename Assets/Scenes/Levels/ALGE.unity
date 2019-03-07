@@ -2870,8 +2870,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527696702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.65, y: 14.7, z: 0.27795553}
-  m_LocalScale: {x: 61.069862, y: 1, z: 1}
+  m_LocalPosition: {x: -14.158, y: 14.7, z: 0.27795553}
+  m_LocalScale: {x: 72.06243, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 755496857}
   m_RootOrder: 0
@@ -3890,7 +3890,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845681977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.1, y: -3.3, z: 0}
+  m_LocalPosition: {x: -33.9, y: -4.1, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 755496857}
@@ -4192,7 +4192,7 @@ PrefabInstance:
     - target: {fileID: 8051193953321622945, guid: e0fa1f6ec5edfc8459287fa6f76b1e6e,
         type: 3}
       propertyPath: m_Name
-      value: Door
+      value: BossDoor
       objectReference: {fileID: 0}
     - target: {fileID: 8051193953321622944, guid: e0fa1f6ec5edfc8459287fa6f76b1e6e,
         type: 3}
@@ -4483,7 +4483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073719249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.1, y: -4.918, z: 0.25960603}
+  m_LocalPosition: {x: -50, y: -4.918, z: 0.25960603}
   m_LocalScale: {x: 1, y: 40.181282, z: 1}
   m_Children: []
   m_Father: {fileID: 755496857}
@@ -4587,8 +4587,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077170552}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.11, y: -24.539473, z: 0.27795553}
-  m_LocalScale: {x: 53.368847, y: 1, z: 1}
+  m_LocalPosition: {x: -17.857, y: -24.539473, z: 0.27795553}
+  m_LocalScale: {x: 64.84315, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 755496857}
   m_RootOrder: 3
