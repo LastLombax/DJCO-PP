@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMobility : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerMobility : MonoBehaviour
     {
         PlayerRotation();
         PlayerMovement();
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name != "MainRoom")
+            SceneManager.LoadScene("MainRoom");
     }
 
     private void PlayerRotation()
@@ -17,7 +20,6 @@ public class PlayerMobility : MonoBehaviour
         Quaternion rot = Quaternion.LookRotation(transform.position - mousePosition, Vector3.forward);
 
         var ang = rot.eulerAngles.z;
-        //Debug.Log(rot.eulerAngles.z);
         if ((ang >= 0 && ang <= 45) || (ang <= 360 && ang >= 315))
         {
             anim.Play("PlayerAnimationUp");

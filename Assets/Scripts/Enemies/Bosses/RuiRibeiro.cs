@@ -46,7 +46,7 @@ public class RuiRibeiro : MonoBehaviour
             else if (Time.time > nextCoolDownTime ) {
                 nextCoolDownTime = Time.time + 1;
                 countdown--;
-                CountdownUI.text = "Round " + phase + 1 + ": " + countdown.ToString("0");
+                CountdownUI.text = "Round " + (phase + 1) + ": " + countdown.ToString("0");
             }
         }
     }

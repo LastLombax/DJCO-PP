@@ -6,10 +6,12 @@ using UnityEngine;
 public class AntonioCoelho : Enemy
 {
 
-    public GameObject projectileOpen;
-    public GameObject projectileCLose;
+    public GameObject projectile;
+    public GameObject projectile2;
     private float healthValue = 50f;
     private float speedValue = 0.1f;
+    private Vector3 upperBound;
+    private Vector3 lowerBound;
 
     private float minFireRate = 0.3f;
     private float maxFireRate = 0.7f;
@@ -31,6 +33,8 @@ public class AntonioCoelho : Enemy
         NextMovement();
         player = GameObject.Find("Player");
         setStats(healthValue, speedValue);
+        upperBound = transform.position + new Vector3(0, 9, 0);
+        lowerBound = transform.position + new Vector3(0, -9, 0);
     }
 
     // Update is called once per frame
@@ -41,25 +45,28 @@ public class AntonioCoelho : Enemy
 
         if (ammo <= 0) {
             phase = !phase;
+            nextFire += 5;
             ammo = 15;
         }
 
         if (health.Value <= healthValue / 2 && attackSpeed == 1) {
+            Debug.Log("Half HP");
             attackSpeed *= 2;
-            StatModifier mod = new StatModifier(25, StatModType.PercentAdd);
+            StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
             speed.AddModifier(mod);
         }
 
         if (health.Value <= healthValue / 4 && attackSpeed == 2) {
+            Debug.Log("Quarter HP");
             attackSpeed *= 2;
-            StatModifier mod = new StatModifier(25, StatModType.PercentAdd);
+            StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
             speed.AddModifier(mod);
         }
 
-        // if (Time.time >= nextFire) {
-        //     Shoot();
-        //     NextShotTime();
-        // }
+        if (Time.time >= nextFire) {
+            Shoot();
+            NextShotTime();
+        }
         
 
         if (Time.time >= nextMovement) {
@@ -80,19 +87,19 @@ public class AntonioCoelho : Enemy
     private void Shoot()
     {
         var projPos = transform.position;
-        GameObject shot = null;
-        if (phase)
-            shot = Instantiate(projectileCLose, projPos, Quaternion.identity);
-        else
-            shot = Instantiate(projectileOpen, projPos, Quaternion.identity);
-        Physics2D.IgnoreCollision(shot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        GameObject parenthesis = null;
+        if (phase){
+            parenthesis = Instantiate(projectile2, projPos, Quaternion.identity);
+        } else {
+            parenthesis = Instantiate(projectile, projPos, Quaternion.identity);
+        }    
+        Physics2D.IgnoreCollision(parenthesis.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         ammo--;
     }
 
     private void NextMovement()
     {
         movement = Random.Range(0, 3);
-        Debug.Log(movement);
         currentMovementDuration = Random.Range(minMoveChangeTime, maxMoveChangeTime);
         nextMovement = Time.time + currentMovementDuration;
     }
@@ -116,6 +123,8 @@ public class AntonioCoelho : Enemy
             default:
                 break;
         }
-        transform.position += moveVec * speed.Value;
+        if ((transform.position + moveVec * speed.Value).y < upperBound.y && 
+                (transform.position + moveVec * speed.Value).y > lowerBound.y)
+            transform.position += moveVec * speed.Value;
     }
 }
