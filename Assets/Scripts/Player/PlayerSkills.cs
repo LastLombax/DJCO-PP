@@ -33,15 +33,15 @@ public class PlayerSkills : MonoBehaviour
     void Start()
     {
         xp = 0;
-        fireBallRange = new CharacterStat(10); //initial range = 10
+        fireBallRange = new CharacterStat(15); //initial range = 15
         fireBallCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         fireBallDamage = new CharacterStat(20); //inital damage of 20
         fireBallProjectilesNumber = new CharacterStat(1); //only one projectile in the beginning
-        chainRange = new CharacterStat(5); //initial range = 5
+        chainRange = new CharacterStat(25); //initial range = 25
         chainCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         chainDamage = new CharacterStat(5); //inital damage of 5
         chainNumberBounces = new CharacterStat(2); //initial 2 bounces
-        poisonRange = new CharacterStat(10); //initial range = 10
+        poisonRange = new CharacterStat(20); //initial range = 20
         poisonCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         poisonDamage = new CharacterStat(5); //inital damage of 5
         poisonTime = new CharacterStat(2); //initial time = 2 seconds
