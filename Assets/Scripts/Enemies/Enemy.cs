@@ -6,6 +6,7 @@ public abstract class Enemy : MonoBehaviour
     protected GameObject player;
     protected CharacterStat health;
     protected CharacterStat speed;
+    protected int xp;
     protected Animator anim;
 
     public void setStats(float healthValue, float speedValue){
@@ -45,8 +46,11 @@ public abstract class Enemy : MonoBehaviour
         StatModifier collisionDmg = new StatModifier(damage, StatModType.Flat);
         health.AddModifier(collisionDmg);
         
-        if (health.Value <= 0)
+        if (health.Value <= 0){
+            PlayerSkills ps = (PlayerSkills)player.GetComponent(typeof(PlayerSkills));
+            ps.GainXP(xp);
             Destroy(gameObject);
+        }
             
     }
 

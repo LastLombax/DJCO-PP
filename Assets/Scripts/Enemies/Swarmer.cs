@@ -8,6 +8,7 @@ public class Swarmer : Enemy
 
     private float healthValue = 5f;
     private float speedValue = 0f;
+    public int exp = 2;
     private float nextSpawn = 0;
     private float spawnRate = 3;
 
@@ -17,6 +18,7 @@ public class Swarmer : Enemy
         nextSpawn = Time.time + spawnRate;
         player = GameObject.Find("Player");
         setStats(healthValue,speedValue);
+        xp = exp;
     }
 
     void Update() {
