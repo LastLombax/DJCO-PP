@@ -43,7 +43,7 @@ public class PlayerSkills : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             Instance = this;
         }
-        xp = 0;
+        xp = 1000000;
         fireBallRange = new CharacterStat(15); //initial range = 15
         fireBallCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         fireBallDamage = new CharacterStat(20); //inital damage of 20
@@ -135,7 +135,6 @@ public class PlayerSkills : MonoBehaviour
                 break;
             case 2:
                 fireBallDamage.AddModifier(modifierPercAdd);
-                Debug.Log(fireBallDamage.Value);
                 break;
             case 3:
                 fireBallProjectilesNumber.AddModifier(modifierAdd);
