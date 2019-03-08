@@ -30,6 +30,20 @@ public class PlayerSkills : MonoBehaviour
     protected CharacterStat poisonTime;
 
     // Start is called before the first frame update
+
+    
+    public static PlayerSkills Instance;
+
+    void Awake()
+    {
+        if(Instance){
+            Destroy(gameObject);
+        }else
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        }
+    }
     void Start()
     {
         xp = 0;

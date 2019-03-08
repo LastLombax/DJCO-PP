@@ -181,9 +181,9 @@ MonoBehaviour:
   health:
     BaseValue: 5
   energy:
-    BaseValue: 0
+    BaseValue: 5
   speed:
-    BaseValue: 0.1
+    BaseValue: 5
 --- !u!114 &4670031726849965114
 MonoBehaviour:
   m_ObjectHideFlags: 0

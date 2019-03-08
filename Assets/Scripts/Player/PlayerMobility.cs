@@ -6,12 +6,23 @@ public class PlayerMobility : MonoBehaviour
     public float speed;
     public Animator anim;
 
+    private PlayerSkills ps;
+
+    void Start(){
+        ps = GetComponent<PlayerSkills>();
+    }
+
     void Update()
     {
         PlayerRotation();
         PlayerMovement();
         if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name != "MainRoom")
             SceneManager.LoadScene("MainRoom");
+        
+        if(SceneManager.GetActiveScene().name == "MainRoom")
+            ps.enabled = false;
+        else
+            ps.enabled = true;
     }
 
     private void PlayerRotation()
