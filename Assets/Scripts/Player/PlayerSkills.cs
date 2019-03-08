@@ -122,6 +122,7 @@ public class PlayerSkills : MonoBehaviour
 
     public void UpgradeSkill(int type, float value) //type: (0 - fireBallRange) - (11 -poisonTime) same order above
     {
+        StatModifier modifierPerc = new StatModifier(value, StatModType.PercentMult);
         StatModifier modifierPercAdd = new StatModifier(value, StatModType.PercentAdd);
         StatModifier modifierAdd = new StatModifier(value, StatModType.Flat);
 
@@ -131,7 +132,7 @@ public class PlayerSkills : MonoBehaviour
                 fireBallRange.AddModifier(modifierAdd);
                 break;
             case 1:
-                fireBallCooldown.AddModifier(modifierPercAdd);
+                fireBallCooldown.AddModifier(modifierPerc);
                 break;
             case 2:
                 fireBallDamage.AddModifier(modifierPercAdd);
@@ -143,7 +144,7 @@ public class PlayerSkills : MonoBehaviour
                 chainRange.AddModifier(modifierAdd);
                 break;
             case 5:
-                chainCooldown.AddModifier(modifierPercAdd);
+                chainCooldown.AddModifier(modifierPerc);
                 break;
             case 6:
                 chainDamage.AddModifier(modifierPercAdd);
@@ -155,7 +156,7 @@ public class PlayerSkills : MonoBehaviour
                 poisonRange.AddModifier(modifierAdd);
                 break;
             case 9:
-                poisonCooldown.AddModifier(modifierPercAdd);
+                poisonCooldown.AddModifier(modifierPerc);
                 break;
             case 10:
                 poisonDamage.AddModifier(modifierPercAdd);
