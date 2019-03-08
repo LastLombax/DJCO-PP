@@ -7,6 +7,8 @@ public class PlayerCollision : MonoBehaviour
     public GameObject map;
     public GameObject skillTree;
 
+private static bool playerExists;
+
     public float impact = 1.2f;
 
     public void OnCollisionEnter2D(Collision2D collision)

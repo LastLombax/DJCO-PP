@@ -43,9 +43,6 @@ public class PlayerSkills : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             Instance = this;
         }
-    }
-    void Start()
-    {
         xp = 0;
         fireBallRange = new CharacterStat(15); //initial range = 15
         fireBallCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
@@ -63,28 +60,29 @@ public class PlayerSkills : MonoBehaviour
 
 // Update is called once per frame
     void Update()
+    {
+        Debug.Log(xp);
+        if (Input.GetKeyDown(KeyCode.Alpha1) && Time.time > nextFireFireBall)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1) && Time.time > nextFireFireBall)
-            {
-                nextFireFireBall = Time.time + fireBallCooldown.Value;
-                Fireball();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2) && Time.time > nextFireChain)
-            {
-                nextFireChain = Time.time + chainCooldown.Value;
-                ChainLightning();
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3) && Time.time > nextFirePoison)
-            {
-                nextFirePoison = Time.time + poisonCooldown.Value;
-                PoisonBottle();
-            }
-
-            if (Input.GetMouseButtonDown(0) && GameObject.Find("Weapon(Clone)") == null) {
-                Attack();
-            }
-
+            nextFireFireBall = Time.time + fireBallCooldown.Value;
+            Fireball();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && Time.time > nextFireChain)
+        {
+            nextFireChain = Time.time + chainCooldown.Value;
+            ChainLightning();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && Time.time > nextFirePoison)
+        {
+            nextFirePoison = Time.time + poisonCooldown.Value;
+            PoisonBottle();
+        }
+
+        if (Input.GetMouseButtonDown(0) && GameObject.Find("Weapon(Clone)") == null) {
+            Attack();
+        }
+
+    }
 
     private void Fireball()
     {

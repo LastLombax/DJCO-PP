@@ -18,7 +18,7 @@ public class Swarmer : Enemy
         nextSpawn = Time.time + spawnRate;
         player = GameObject.Find("Player");
         setStats(healthValue,speedValue);
-        xp = exp;
+        setXP(exp);
     }
 
     void Update() {
@@ -35,6 +35,7 @@ public class Swarmer : Enemy
         var projectilePos = transform.position;
         var shot = Instantiate(spawnedEnemy, projectilePos, Quaternion.identity);
         shot.transform.parent = this.transform;
+        shot.GetComponent<Melee>().setXP(0);
 
         Physics2D.IgnoreCollision(shot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }

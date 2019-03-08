@@ -18,7 +18,7 @@ public class Ranged : Enemy {
         nextFire = Time.time + fireRate;
         player = GameObject.Find("Player");
         setStats(healthValue,speedValue);
-        xp = exp;
+        setXP(exp);
     }
 
     // Update is called once per frame

@@ -63,4 +63,8 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+    public void setXP(int exp){
+        xp = exp;
+    }
+
 }

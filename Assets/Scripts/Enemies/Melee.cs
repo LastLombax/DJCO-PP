@@ -9,7 +9,7 @@ public class Melee : Enemy {
     void Start() {
         player = GameObject.Find("Player");
         setStats(healthValue,speedValue);
-        xp = exp;
+        setXP(exp);
     }
 
     void Update() {

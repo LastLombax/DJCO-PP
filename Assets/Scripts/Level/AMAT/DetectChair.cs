@@ -5,8 +5,8 @@ public class DetectChair : MonoBehaviour
    public GameObject CanvasDialogue;
    void OnTriggerEnter2D(Collider2D collision){
        if (collision.gameObject.name == "Player"){
-           Destroy(collision.gameObject.GetComponent<PlayerMobility>());
-           Destroy(collision.gameObject.GetComponent<PlayerSkills>());
+           collision.gameObject.GetComponent<PlayerMobility>().enabled = false;
+           collision.gameObject.GetComponent<PlayerSkills>().enabled = false;
            CanvasDialogue.SetActive(true);
            GetComponent<MeshRenderer>().enabled= false;
            collision.gameObject.transform.position = gameObject.transform.position;
