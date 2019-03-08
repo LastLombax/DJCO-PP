@@ -157,14 +157,14 @@ public class PlayerSkills : MonoBehaviour
 
     public bool HasEnoughXP(int xpNeeded)
     {
-        return xpNeeded >= this.xp;
+        return this.xp >= xpNeeded;
     }
 
     public void UseXP(int xpUsed)
     {
         if(xp < xpUsed)
         {
-            Debug.Log("Not enough xp for that");
+            Debug.Log("Not enough xp for that, pls check code, test first with HasEnoughXP(int)");
         }
         xp -= xpUsed;
     }
