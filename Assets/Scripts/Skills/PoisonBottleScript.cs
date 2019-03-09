@@ -7,7 +7,7 @@ public class PoisonBottleScript : Skill
     public float velocity;
     public float range;
     public float damage;
-    private float stopLenght;
+    private float stopLength;
     private float puddleDuration;
     public GameObject poisonPuddle;
     
@@ -18,20 +18,20 @@ public class PoisonBottleScript : Skill
         Setup();
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = transform.position - mousePosition;
-        stopLenght = Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y);
-        if (stopLenght > range)
+        stopLength = Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y);
+        if (stopLength > range)
         {
-            stopLenght = range;
+            stopLength = range;
         }
-        velX = -direction.x * (velocity / stopLenght);
-        velY = -direction.y * (velocity / stopLenght);
+        velX = -direction.x * (velocity / stopLength);
+        velY = -direction.y * (velocity / stopLength);
     }
 
     // Update is called once per frame
     void Update()
     {
         rb.velocity = new Vector2(velX, velY);
-        if ((transform.position - startingPos).magnitude > stopLenght)
+        if ((transform.position - startingPos).magnitude > stopLength)
         {
             GameObject poisonPuddleInstantiate = Instantiate(poisonPuddle, transform.position, Quaternion.identity);
             poisonPuddleInstantiate.GetComponent<PoisonPuddleScript>().GiveStats(damage, puddleDuration);
@@ -44,6 +44,13 @@ public class PoisonBottleScript : Skill
         range = rangeStat;
         damage = damageStat;
         puddleDuration = puddleDurationStat;
+    }
+
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Wall") 
+            Destroy(gameObject);
     }
 
 

@@ -40,6 +40,8 @@ public class FireballScript : Skill
             collision.gameObject.GetComponent<Enemy>().DmgCollision(damage * -1);
             Destroy(gameObject);
         }
+        if (collision.gameObject.tag == "Wall") 
+            Destroy(gameObject);
     }
 
     public void GiveStats(float rangeStat, float damageStat, int projectileNumberStat)
