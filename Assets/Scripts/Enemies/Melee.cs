@@ -3,7 +3,7 @@ using UnityEngine;
 public class Melee : Enemy {
 
     private float healthValue = 2f;
-    private float speedValue = 0.05f;
+    private float speedValue = 10;
     public int exp = 2;
 
     void Start() {

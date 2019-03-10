@@ -33,7 +33,7 @@ public abstract class Enemy : MonoBehaviour
     }
     protected void EnemyMovement() {
         Vector3 movement = player.transform.position - transform.position;
-        transform.position += movement.normalized * speed.Value;
+        transform.position += movement.normalized * speed.Value * Time.deltaTime;
     }
 
     public void OnCollisionEnter2D(Collision2D collision){
@@ -56,11 +56,7 @@ public abstract class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Fireball(Clone)")
-        {
-            DmgCollision(-1);
-            Destroy(collision.gameObject);
-        }
+        
     }
 
     public void setXP(int exp){

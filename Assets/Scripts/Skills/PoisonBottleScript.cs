@@ -23,8 +23,8 @@ public class PoisonBottleScript : Skill
         {
             stopLength = range;
         }
-        velX = -direction.x * (velocity / stopLength);
-        velY = -direction.y * (velocity / stopLength);
+        velX = -direction.x * (Time.deltaTime * 100 * velocity / stopLength);
+        velY = -direction.y * (Time.deltaTime * 100 * velocity / stopLength);
     }
 
     // Update is called once per frame

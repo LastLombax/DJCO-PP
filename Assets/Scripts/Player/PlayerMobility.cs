@@ -57,6 +57,6 @@ public class PlayerMobility : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
-        transform.position = transform.position + movement * speed;
+        transform.position = transform.position + movement * speed * Time.deltaTime;
     }
 }

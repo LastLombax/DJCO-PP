@@ -17,8 +17,8 @@ public class FireballScript : Skill
         Vector3 direction = transform.position - mousePosition;
         var dirLenght = Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y);
 
-        velX = -direction.x * (velocity / dirLenght);
-        velY = -direction.y * (velocity / dirLenght);
+        velX = -direction.x * ((Time.deltaTime * 100 * velocity) / dirLenght);
+        velY = -direction.y * ((Time.deltaTime * 100 * velocity) / dirLenght);
 
     }
 

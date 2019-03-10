@@ -21,8 +21,8 @@ public class RoomScript : MonoBehaviour
             else if (child.name == "UpWall")
                 maxY = child.transform.position.y-0.5f;
         }
-        Debug.Log("MinX: " + minX + " ; maxX: " + maxX);
-        Debug.Log("MinY: " + minY + " ; maxY: " + maxY);
+        //Debug.Log("MinX: " + minX + " ; maxX: " + maxX);
+        //Debug.Log("MinY: " + minY + " ; maxY: " + maxY);
     }
 
     // Update is called once per frame

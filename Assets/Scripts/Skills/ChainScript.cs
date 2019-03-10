@@ -37,7 +37,7 @@ public class ChainScript : Skill
         }
         var enemyPosition = nearestEnemy.transform.position;
         Vector3 movement = - transform.position + enemyPosition;
-        transform.position += movement.normalized * velocity;
+        transform.position += movement.normalized * Time.deltaTime * velocity;
     }
  
     void OnTriggerEnter2D(Collider2D collision)

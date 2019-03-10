@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbf752db9e7a814fa20f1884bbd771e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 20
   anim: {fileID: 5634833293158175447}
 --- !u!114 &5634833293158175443
 MonoBehaviour:
@@ -196,9 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbd464189e0b31944b48f3384fd94641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 2274344861590881184, guid: cb9ffee22e7d5d14b89a3eaebe019a86, type: 3}
-  skillTree: {fileID: 2416284287868622379, guid: be28ec554349db44bb709eff6780baf3,
-    type: 3}
+  map: {fileID: 0}
+  skillTree: {fileID: 0}
   impact: 1.2
 --- !u!114 &5634833293158175441
 MonoBehaviour:

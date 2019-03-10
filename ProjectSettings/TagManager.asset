@@ -9,6 +9,8 @@ TagManager:
   - ProjectilePlayer
   - Wall
   - Projectile
+  - Socket
+  - LogicGate
   layers:
   - Default
   - TransparentFX
