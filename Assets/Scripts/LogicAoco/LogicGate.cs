@@ -41,6 +41,7 @@ public abstract class LogicGate : MonoBehaviour
         {
             leaveSocket = false;
             collision.gameObject.GetComponent<SocketScript>().hasGate = false;
+            collision.gameObject.GetComponent<SocketScript>().logicGate = null;
         }
         if (socketed)
         {
