@@ -68,6 +68,13 @@ public class ChainScript : Skill
             
 
     }
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && returning)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void GiveStats(float rangeStat, float damageStat, int numberBouncesStat)
     {
