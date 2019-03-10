@@ -9,7 +9,10 @@ public class Torcato : MonoBehaviour
     public Sprite[] worlds;
     public Sprite[] rules;
 
-    private bool[] answers = {false, true, true, false, true};
+    private GameObject world;
+    private GameObject sentences;
+
+    private bool[] answers = {true, true, false, false, true};
     private int level;
     private bool state;
     private bool over;
@@ -20,6 +23,8 @@ public class Torcato : MonoBehaviour
         level = 0;
         state = true;
         over = false;
+        world = GameObject.Find("world");
+        sentences = GameObject.Find("rules");
     }
 
     // Update is called once per frame
@@ -41,8 +46,12 @@ public class Torcato : MonoBehaviour
 
     public void CheckAnswer(bool answer) 
     {
-        Debug.Log("Here");
-        state = state && answer;
+        Debug.Log(level);
+        state = state && (answer == answers[level]);
         level++;
+        if (level < answers.Length){
+            world.GetComponent<SpriteRenderer>().sprite = worlds[level];
+            sentences.GetComponent<SpriteRenderer>().sprite = rules[level];
+        }
     }
 }
