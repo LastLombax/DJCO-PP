@@ -57,6 +57,9 @@ TagManager:
   - name: Entities
     uniqueID: 59839629
     locked: 0
+  - name: Projectile
+    uniqueID: 2595311793
+    locked: 0
   - name: Walls
     uniqueID: 3496887859
     locked: 0
