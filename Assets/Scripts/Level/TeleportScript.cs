@@ -5,8 +5,8 @@ using UnityEngine;
 public class TeleportScript : MonoBehaviour
 {
 
-    public GameObject otherDoor;
     public GameObject room;
+    public GameObject otherDoor;
     private float nextOpen;
     private float timeOut;
     // Start is called before the first frame update
