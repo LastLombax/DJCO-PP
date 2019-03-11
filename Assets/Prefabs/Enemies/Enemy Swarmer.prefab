@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 59839629
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 47df0b6441b650940ab9e12f0825a4ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -163,3 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnedEnemy: {fileID: 394269993666214406, guid: 0a9443a838dca9a4291cffe443f142de,
     type: 3}
+  exp: 2

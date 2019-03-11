@@ -34,8 +34,8 @@ public class AntonioCoelho : Enemy
         NextMovement();
         player = GameObject.Find("Player");
         setStats(healthValue, speedValue);
-        upperBound = transform.position + new Vector3(0, 9, 0);
-        lowerBound = transform.position + new Vector3(0, -9, 0);
+        // upperBound = transform.position + new Vector3(0, 9, 0);
+        // lowerBound = transform.position + new Vector3(0, -9, 0);
     }
 
     // Update is called once per frame
@@ -125,8 +125,8 @@ public class AntonioCoelho : Enemy
             default:
                 break;
         }
-        if ((transform.position + moveVec * speed.Value).y < upperBound.y && 
-                (transform.position + moveVec * speed.Value).y > lowerBound.y)
+        // if ((transform.position + moveVec * speed.Value).y < upperBound.y && 
+        //         (transform.position + moveVec * speed.Value).y > lowerBound.y)
             transform.position += moveVec * speed.Value;
     }
 }
