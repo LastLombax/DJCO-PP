@@ -5,6 +5,7 @@ public class PlayerMobility : MonoBehaviour
 {
     public float speed;
     public Animator anim;
+    public bool frozen;
     private Rigidbody2D rb;
 
     private PlayerSkills ps;
@@ -12,6 +13,7 @@ public class PlayerMobility : MonoBehaviour
     void Start(){
         ps = GetComponent<PlayerSkills>();
         rb = GetComponent<Rigidbody2D>();
+        frozen = false;
     }
 
     void Update()
@@ -56,6 +58,11 @@ public class PlayerMobility : MonoBehaviour
 
     private void PlayerMovement()
     {
+        if (frozen) {
+            Debug.Log("Frozen");
+            rb.velocity = new Vector2(0,0);
+            return;
+        }
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
         //Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);

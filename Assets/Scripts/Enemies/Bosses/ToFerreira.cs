@@ -67,10 +67,10 @@ public class ToFerreira : Enemy
         
 
         if (Time.time >= nextMovement) {
-            if (movement != 3) {
+            if (movement != 0) {
                 NextMovement();
             } else {
-                movement = 2;
+                movement = 1;
                 nextMovement = Time.time + currentMovementDuration;
             }
         }
