@@ -41,12 +41,9 @@ public class GameManager : MonoBehaviour
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "MainRoom"){
-           //foreach(GameObject fooObj in GameObject.FindGameObjectsWithTag("Player"))
-              //  if (fooObj.GetComponent<PlayerSkills>() == null)
-               //     Destroy(fooObj);
 
             var player = GameObject.Find("Player");
-            player.transform.position = Vector3.zero;
+            player.transform.position = new Vector3(-8f, 290f, 0);
             player.gameObject.GetComponent<PlayerMobility>().frozen = false;
             player.gameObject.GetComponent<PlayerSkills>().enabled = true;
             player.GetComponent<PlayerCollision>().map = GameObject.Find("Map");

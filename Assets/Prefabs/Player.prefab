@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   anim: {fileID: 5634833293158175447}
+  frozen: 0
 --- !u!114 &5634833293158175443
 MonoBehaviour:
   m_ObjectHideFlags: 0
