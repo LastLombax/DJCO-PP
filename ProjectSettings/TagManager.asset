@@ -20,8 +20,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Floor
+  - Player
   - 
   - 
   - 
@@ -47,4 +47,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 1822146739
+    locked: 0
+  - name: FloorAddOns
+    uniqueID: 779668073
+    locked: 0
+  - name: Entities
+    uniqueID: 59839629
+    locked: 0
+  - name: Walls
+    uniqueID: 3496887859
+    locked: 0
+  - name: Door
+    uniqueID: 3177551717
     locked: 0

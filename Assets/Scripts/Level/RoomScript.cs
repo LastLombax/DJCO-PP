@@ -28,6 +28,7 @@ public class RoomScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (player.transform.position.x < minX){
             player.transform.position = new Vector3(minX, player.transform.position.y, 0);
         }
@@ -39,7 +40,7 @@ public class RoomScript : MonoBehaviour
         }
          else if (player.transform.position.y > maxY){
             player.transform.position = new Vector3(player.transform.position.x, maxY, 0);
-        }
+        }*/
         
     }
 }

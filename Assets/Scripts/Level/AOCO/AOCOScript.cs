@@ -15,15 +15,18 @@ public class AOCOScript : MonoBehaviour, LevelScript
 
     void Start()
     {
+        
         mainCamera = GameObject.Find("Main Camera"); 
         player = GameObject.Find("Player");
-        currentRoom = 0;
+        /*currentRoom = 0;
         rooms[currentRoom].SetActive(true);
         for (int i = 1; i < rooms.Length; i++)
-            rooms[i].SetActive(false);
+            rooms[i].SetActive(false);*/
+            
     }
 
     public void ChangeRoom(int doorID){
+        /*
         rooms[currentRoom].SetActive(false);
 
         switch(doorID){
@@ -73,6 +76,6 @@ public class AOCOScript : MonoBehaviour, LevelScript
        
         player.transform.position += playerNewPos;  
         rooms[currentRoom].SetActive(true);
-
+        */
     }
 }

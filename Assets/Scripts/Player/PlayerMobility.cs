@@ -5,11 +5,13 @@ public class PlayerMobility : MonoBehaviour
 {
     public float speed;
     public Animator anim;
+    private Rigidbody2D rb;
 
     private PlayerSkills ps;
 
     void Start(){
         ps = GetComponent<PlayerSkills>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -56,7 +58,8 @@ public class PlayerMobility : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
-        transform.position = transform.position + movement * speed * Time.deltaTime;
+        //Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
+        //transform.position = transform.position + movement * speed * Time.deltaTime;
+        rb.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
     }
 }
