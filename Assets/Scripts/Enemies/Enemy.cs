@@ -7,10 +7,12 @@ public abstract class Enemy : MonoBehaviour
     protected CharacterStat health;
     protected CharacterStat speed;
     protected int xp;
+    protected Rigidbody2D rb;
+
     protected Animator anim;
 
     public void setStats(float healthValue, float speedValue){
-        
+        rb = GetComponent<Rigidbody2D>();
         health = new CharacterStat(healthValue);
         speed = new CharacterStat(speedValue);
     }
@@ -33,7 +35,8 @@ public abstract class Enemy : MonoBehaviour
     }
     protected void EnemyMovement() {
         Vector3 movement = player.transform.position - transform.position;
-        transform.position += movement.normalized * speed.Value * Time.deltaTime;
+        rb.velocity = new Vector2( movement.normalized.x * speed.Value, movement.normalized.y * speed.Value);
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision){
