@@ -38,7 +38,7 @@ public class Torcato : MonoBehaviour
             if (state) {
                 Debug.Log("Passaste");
             } else {
-                Debug.Log("Lamento, mas não obviteste uma classificação satisfatória...");
+                Debug.Log("Lamento, mas não obtiveste uma classificação satisfatória...");
             }
             StartCoroutine(gm.Load2Scene("MainRoom"));
         }

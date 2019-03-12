@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TimerScript : MonoBehaviour
 {
+    public GameManager gm;
+
     public Sprite sprite0;
     public Sprite sprite1;
     public Sprite sprite2;
@@ -57,6 +59,7 @@ public class TimerScript : MonoBehaviour
         {
             Debug.Log("You won!!");
             gameWon = true;
+            StartCoroutine(gm.Load2Scene("MainRoom"));
         }
     }
 }

@@ -24,6 +24,8 @@ public class Ranged : Enemy {
     // Update is called once per frame
     void Update()
     {
+        if (!active)
+            return;
         EnemyRotation();
         EnemyMovement();
         if (Time.time > nextFire) {

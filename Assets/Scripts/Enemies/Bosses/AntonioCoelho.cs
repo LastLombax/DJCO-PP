@@ -9,9 +9,7 @@ public class AntonioCoelho : Enemy
     public GameObject projectile;
     public GameObject projectile2;
     private float healthValue = 50f;
-    private float speedValue = 0.2f;
-    private Vector3 upperBound;
-    private Vector3 lowerBound;
+    private float speedValue = 10;
 
     private float minFireRate = 0.3f;
     private float maxFireRate = 0.7f;
@@ -34,8 +32,7 @@ public class AntonioCoelho : Enemy
         NextMovement();
         player = GameObject.Find("Player");
         setStats(healthValue, speedValue);
-        // upperBound = transform.position + new Vector3(0, 9, 0);
-        // lowerBound = transform.position + new Vector3(0, -9, 0);
+
     }
 
     // Update is called once per frame
@@ -125,8 +122,7 @@ public class AntonioCoelho : Enemy
             default:
                 break;
         }
-        // if ((transform.position + moveVec * speed.Value).y < upperBound.y && 
-        //         (transform.position + moveVec * speed.Value).y > lowerBound.y)
-            transform.position += moveVec * speed.Value;
+        rb.velocity = new Vector2( moveVec.x * speed.Value, moveVec.y * speed.Value);
+
     }
 }
