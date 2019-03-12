@@ -13,6 +13,8 @@ public class Melee : Enemy {
     }
 
     void Update() {
+        if (!active)
+            return;
         EnemyRotation();
         EnemyMovement();
     }

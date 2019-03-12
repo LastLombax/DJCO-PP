@@ -22,6 +22,8 @@ public class Swarmer : Enemy
     }
 
     void Update() {
+        if (!active)
+            return;
         EnemyRotation();
         EnemyMovement();
         if (Time.time > nextSpawn) {

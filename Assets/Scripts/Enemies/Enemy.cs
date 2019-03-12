@@ -9,6 +9,8 @@ public abstract class Enemy : MonoBehaviour
     protected int xp;
     protected Rigidbody2D rb;
 
+    protected bool active = false;
+
     protected Animator anim;
 
     public void setStats(float healthValue, float speedValue){
@@ -57,9 +59,8 @@ public abstract class Enemy : MonoBehaviour
             
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        
+    public void SetActivation(bool status){
+        this.active = status;
     }
 
     public void setXP(int exp){

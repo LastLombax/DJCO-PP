@@ -29,6 +29,7 @@ public class ToFerreira : Enemy
         NextMovement();
         player = GameObject.Find("Player");
         setStats(healthValue, speedValue);
+
     }
 
     // Update is called once per frame
