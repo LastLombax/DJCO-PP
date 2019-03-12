@@ -44,7 +44,7 @@ public class PlayerSkills : MonoBehaviour
             Instance = this;
         }
         xp = 1000000;
-        fireBallRange = new CharacterStat(15); //initial range = 15
+        fireBallRange = new CharacterStat(30); //initial range = 15
         fireBallCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         fireBallDamage = new CharacterStat(20); //inital damage of 20
         fireBallProjectilesNumber = new CharacterStat(1); //only one projectile in the beginning
