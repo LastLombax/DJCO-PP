@@ -12,7 +12,20 @@ public class PlayerCollision : MonoBehaviour
 
     private static bool playerExists;
 
-    public float impact = 1.2f;
+    private float impact = 10000f;
+
+    private Vector3 knockBackDirection;
+    private float knockBackDuration = 0.5f;
+    private float knockBackEnd = 0;
+
+    void Update()
+    {
+        if(knockBackEnd > Time.time)
+        {
+            GetComponent<Rigidbody2D>().AddForce(knockBackDirection * impact * (knockBackEnd - Time.time));
+            //transform.position += knockBackDirection * impact * (Time.deltaTime / knockBackDuration);
+        }
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -34,14 +47,16 @@ public class PlayerCollision : MonoBehaviour
     {
         GetComponent<PlayerStats>().DmgCollision(-1);
         Vector3 force = transform.position - collision.transform.position;
-        transform.position = transform.position + force * impact;
+        knockBackDirection = force;
+        knockBackEnd = Time.time + knockBackDuration;
+        //transform.position = transform.position + force * impact;
     }
 
     public void EnemyCollision(Collider2D collision)
     {
         GetComponent<PlayerStats>().DmgCollision(-1);
-        Vector3 force = transform.position - collision.transform.position;
-        transform.position = transform.position + force * impact;
+        //Vector3 force = transform.position - collision.transform.position;
+        //transform.position = transform.position + force * impact;
     }
 
     private IEnumerator ShowMap(float duration)

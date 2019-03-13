@@ -12,7 +12,7 @@ public class TeleportScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeOut = 3;
+        timeOut = 0.5f;
         nextOpen = 0;
     }
 
