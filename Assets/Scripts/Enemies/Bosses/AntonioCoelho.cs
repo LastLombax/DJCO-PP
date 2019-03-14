@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AntonioCoelho : Enemy
 {
+    public DialogueManager dm;
 
     public GameObject projectile;
     public GameObject projectile2;
@@ -38,41 +39,44 @@ public class AntonioCoelho : Enemy
     // Update is called once per frame
     void Update()
     {
-        EnemyRotation();
-        EnemyMovement();
+        if (dm.dialogueEnd){
 
-        if (ammo <= 0) {
-            phase = !phase;
-            nextFire += 5;
-            ammo = 15;
-        }
+            EnemyRotation();
+            EnemyMovement();
 
-        if (health.Value <= healthValue / 2 && attackSpeed == 1) {
-            Debug.Log("Half HP");
-            attackSpeed *= 2;
-            StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
-            speed.AddModifier(mod);
-        }
+            if (ammo <= 0) {
+                phase = !phase;
+                nextFire += 5;
+                ammo = 15;
+            }
 
-        if (health.Value <= healthValue / 4 && attackSpeed == 2) {
-            Debug.Log("Quarter HP");
-            attackSpeed *= 2;
-            StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
-            speed.AddModifier(mod);
-        }
+            if (health.Value <= healthValue / 2 && attackSpeed == 1) {
+                Debug.Log("Half HP");
+                attackSpeed *= 2;
+                StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
+                speed.AddModifier(mod);
+            }
 
-        if (Time.time >= nextFire) {
-            Shoot();
-            NextShotTime();
-        }
-        
+            if (health.Value <= healthValue / 4 && attackSpeed == 2) {
+                Debug.Log("Quarter HP");
+                attackSpeed *= 2;
+                StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
+                speed.AddModifier(mod);
+            }
 
-        if (Time.time >= nextMovement) {
-            if (movement != 2) {
-                NextMovement();
-            } else {
-                movement = 3;
-                nextMovement = Time.time + currentMovementDuration;
+            if (Time.time >= nextFire) {
+                Shoot();
+                NextShotTime();
+            }
+            
+
+            if (Time.time >= nextMovement) {
+                if (movement != 2) {
+                    NextMovement();
+                } else {
+                    movement = 3;
+                    nextMovement = Time.time + currentMovementDuration;
+                }
             }
         }
     }
