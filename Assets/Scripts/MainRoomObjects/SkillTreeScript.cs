@@ -219,6 +219,7 @@ public class SkillTreeScript : MonoBehaviour
 
     public void CloseTree()
     {
+        player.GetComponent<PlayerMobility>().frozen = false;
         SkillTreeUI.SetActive(false);
     }
     
