@@ -11,6 +11,9 @@ TagManager:
   - Projectile
   - Socket
   - LogicGate
+  - FireBallSkillTree
+  - ChainSkillTree
+  - PoisonSkillTree
   layers:
   - Default
   - TransparentFX

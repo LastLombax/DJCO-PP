@@ -43,7 +43,7 @@ public class PlayerSkills : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             Instance = this;
         }
-        xp = 0;
+        xp = 100;
         fireBallRange = new CharacterStat(30); //initial range = 15
         fireBallCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         fireBallDamage = new CharacterStat(20); //inital damage of 20

@@ -6,20 +6,30 @@ using UnityEngine;
 
 public class SkillTreeScript : MonoBehaviour
 {
+    Dictionary<string, GameObject> buttons;
     Dictionary<string, SkillTreeNode> nodes;
     public GameObject SkillTreeUI;
     private GameObject player;
     private Vector3 PlayerPos;
 
-    void Start()
+    private SkillTreeScript fireballTreeInstance;
+    private SkillTreeScript chainTreeInstance;
+    private SkillTreeScript poisonTreeInstance;
+
+    void Awake()
+    {
+
+    }
+        void Start()
     {
         player = GameObject.Find("Player");
-
+        buttons = new Dictionary<string, GameObject>();
         nodes = new Dictionary<string, SkillTreeNode>();
 
         CreateSkillTreeFireBall();
         CreateSkillTreeChainLightning();
         CreateSkillTreePoisonPuddle();
+        UpdateButtonsStatus();
     }
 
     private void CreateSkillTreeFireBall()
@@ -204,6 +214,7 @@ public class SkillTreeScript : MonoBehaviour
     {
         PlayerPos = player.transform.position;
         SkillTreeUI.SetActive(true);
+        UpdateButtonsStatus();
     }
 
     public void CloseTree()
@@ -235,6 +246,42 @@ public class SkillTreeScript : MonoBehaviour
         player.GetComponent<PlayerSkills>().UpgradeSkill(nodes[id].GetUpgradeType(), nodes[id].GetValue());
         nodes[id].Activate();
         player.GetComponent<PlayerSkills>().UseXP(nodes[id].GetXpPrice());
+        UpdateButtonsStatus();
+    }
+
+    public void AddButtonToSkillTree(string id, GameObject button)
+    {
+        buttons.Add(id, button);
+        UpdateButtonsStatus();
+    }
+
+    public void UpdateButtonsStatus()
+    {
+        foreach(string id in buttons.Keys)
+        {
+            if(nodes[id].IsActive())
+            {
+                buttons[id].GetComponent<SkillTreeButton>().UpdateColorActivated();
+                continue;
+            }
+            if(player.GetComponent<PlayerSkills>().HasEnoughXP(nodes[id].GetXpPrice()))
+            {
+                bool fathersAreActive = true;
+                foreach (string fatherId in nodes[id].fathers)
+                {
+                    if (!nodes[fatherId].IsActive())
+                    {
+                        fathersAreActive = false;
+                    }
+                }
+                if(fathersAreActive)
+                {
+                    buttons[id].GetComponent<SkillTreeButton>().UpdateColorAbleToBuy();
+                    continue;
+                }
+            }
+            buttons[id].GetComponent<SkillTreeButton>().UpdateColorUnableToBuy();
+        }
     }
 }
 

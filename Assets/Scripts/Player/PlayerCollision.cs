@@ -39,7 +39,10 @@ public class PlayerCollision : MonoBehaviour
         }
 
         if (collision.gameObject.name == "DonaLina")
+        {
             skillTree.GetComponent<SkillTreeScript>().ShowTree();
+        }
+           
      
     }
 
