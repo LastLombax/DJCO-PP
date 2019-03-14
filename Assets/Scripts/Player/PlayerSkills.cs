@@ -61,7 +61,6 @@ public class PlayerSkills : MonoBehaviour
 // Update is called once per frame
     void Update()
     {
-        //Debug.Log(xp);
         if (Input.GetKeyDown(KeyCode.Alpha1) && Time.time > nextFireFireBall)
         {
             nextFireFireBall = Time.time + fireBallCooldown.Value;
