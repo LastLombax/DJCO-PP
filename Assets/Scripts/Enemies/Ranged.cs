@@ -7,7 +7,7 @@ public class Ranged : Enemy {
     public GameObject projectile;
     private float healthValue = 5f;
     private float speedValue = 0f;
-    public int exp = 4;
+    private int exp = 20;
 
     private float nextFire = 0;
     private float fireRate = 2;

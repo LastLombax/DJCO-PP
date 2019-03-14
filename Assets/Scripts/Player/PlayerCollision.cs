@@ -36,14 +36,7 @@ public class PlayerCollision : MonoBehaviour
             FEUPLetters.GetComponent<Animator>().enabled = true;
             FEUPLetters.GetComponent<Animator>().Play("PlayerAnimationRightIdle");		
             StartCoroutine(ShowMap(1));
-        }
-
-        if (collision.gameObject.name == "DonaLina")
-        {
-            skillTree.GetComponent<SkillTreeScript>().ShowTree();
-        }
-           
-     
+        }    
     }
 
     public void EnemyCollision(Collision2D collision)
@@ -52,14 +45,11 @@ public class PlayerCollision : MonoBehaviour
         Vector3 force = transform.position - collision.transform.position;
         knockBackDirection = force;
         knockBackEnd = Time.time + knockBackDuration;
-        //transform.position = transform.position + force * impact;
     }
 
     public void EnemyCollision(Collider2D collision)
     {
         GetComponent<PlayerStats>().DmgCollision(-1);
-        //Vector3 force = transform.position - collision.transform.position;
-        //transform.position = transform.position + force * impact;
     }
 
     private IEnumerator ShowMap(float duration)

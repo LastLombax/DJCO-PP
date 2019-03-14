@@ -4,7 +4,7 @@ public class Melee : Enemy {
 
     private float healthValue = 2f;
     private float speedValue = 10;
-    public int exp = 2;
+    private int exp = 15;
 
     void Start() {
         player = GameObject.Find("Player");
@@ -17,5 +17,10 @@ public class Melee : Enemy {
             return;
         EnemyRotation();
         EnemyMovement();
+    }
+
+    public void setEXP(int xp)
+    {
+        exp = xp;
     }
 }

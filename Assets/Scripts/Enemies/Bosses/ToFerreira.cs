@@ -6,8 +6,9 @@ using UnityEngine;
 public class ToFerreira : Enemy
 {
 
+    public DialogueManager dm;
     public GameObject projectile;
-    private float healthValue = 50f;
+    private float healthValue = 200f;
     private float speedValue = 10;
     private int shotRange = 55;
 
@@ -35,40 +36,42 @@ public class ToFerreira : Enemy
     // Update is called once per frame
     void Update()
     {
-        EnemyRotation();
-        EnemyMovement();
+        if (dm.dialogueEnd){
+            EnemyRotation();
+            EnemyMovement();
 
-        if (ammo <= 0) {
-            nextFire += 4;
-            ammo = 7;
-        }
+            if (ammo <= 0) {
+                nextFire += 4;
+                ammo = 7;
+            }
 
-        if (health.Value <= healthValue / 2 && attackSpeed == 1) {
-            Debug.Log("Half HP");
-            attackSpeed *= 2;
-            StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
-            speed.AddModifier(mod);
-        }
+            if (health.Value <= healthValue / 2 && attackSpeed == 1) {
+                Debug.Log("Half HP");
+                attackSpeed *= 2;
+                StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
+                speed.AddModifier(mod);
+            }
 
-        if (health.Value <= healthValue / 4 && attackSpeed == 2) {
-            Debug.Log("Quarter HP");
-            attackSpeed *= 2;
-            StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
-            speed.AddModifier(mod);
-        }
+            if (health.Value <= healthValue / 4 && attackSpeed == 2) {
+                Debug.Log("Quarter HP");
+                attackSpeed *= 2;
+                StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
+                speed.AddModifier(mod);
+            }
 
-        if (Time.time >= nextFire) {
-            Shoot();
-            NextShotTime();
-        }
-        
+            if (Time.time >= nextFire) {
+                Shoot();
+                NextShotTime();
+            }
+            
 
-        if (Time.time >= nextMovement) {
-            if (movement != 0) {
-                NextMovement();
-            } else {
-                movement = 1;
-                nextMovement = Time.time + currentMovementDuration;
+            if (Time.time >= nextMovement) {
+                if (movement != 0) {
+                    NextMovement();
+                } else {
+                    movement = 1;
+                    nextMovement = Time.time + currentMovementDuration;
+                }
             }
         }
     }

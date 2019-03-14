@@ -68,7 +68,6 @@ public class PlayerMobility : MonoBehaviour
     private void PlayerMovement()
     {
         if (frozen) {
-            Debug.Log("Frozen");
             rb.velocity = new Vector2(0,0);
             return;
         }

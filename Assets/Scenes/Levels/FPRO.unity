@@ -595,6 +595,7 @@ GameObject:
   - component: {fileID: 332463352}
   - component: {fileID: 332463351}
   - component: {fileID: 332463350}
+  - component: {fileID: 332463353}
   m_Layer: 0
   m_Name: door11
   m_TagString: Untagged
@@ -612,7 +613,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 258.1, y: 90.47, z: -0.9738484}
   m_LocalScale: {x: 9, y: 9, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1770772654}
   m_Father: {fileID: 1316462032}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -704,6 +706,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &332463353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332463348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a153bf34f735c4a9827ea7b7d8a142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasDialogue: {fileID: 2139040954}
+  dm: {fileID: 333710784}
 --- !u!1 &333710783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,8 +1987,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51, y: -122}
-  m_SizeDelta: {x: 320, y: 510}
+  m_AnchoredPosition: {x: 104.7, y: -141}
+  m_SizeDelta: {x: 320, y: 473.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932278162
 MonoBehaviour:
@@ -2587,7 +2603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: -16}
+  m_AnchoredPosition: {x: 161.8, y: -127.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166721121
@@ -2726,6 +2742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e0d35e67258f84c8eaef381822156a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dm: {fileID: 333710784}
   projectile: {fileID: 2406793922585399121, guid: a93de83773420ff4f8c46a821e538e92,
     type: 3}
   projectile2: {fileID: 2406793922585399121, guid: a6213f14dba98744ca1435f4a8a5f083,
@@ -3203,7 +3220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 123}
+  m_AnchoredPosition: {x: 69, y: 97.7}
   m_SizeDelta: {x: 300, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444762282
@@ -4003,6 +4020,56 @@ Transform:
   m_Father: {fileID: 1316462032}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1770772653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1770772654}
+  - component: {fileID: 1770772655}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1770772654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770772653}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -37.1965, y: -15.334678, z: -0.28493828}
+  m_LocalScale: {x: 0.22960667, y: 0.20500223, z: 1}
+  m_Children: []
+  m_Father: {fileID: 332463349}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1770772655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770772653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17fba373501ce554fb9db5bba47d1190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: "Ant\xF3nio Coelho"
+    sentences:
+    - Today, children, we'll be learning recursive functions, one of the oldest usages
+      programming practices in history
+    - Simply call back your function so it can repeat whatever your heart desires!
+    - Oh and don't forget to put parenthesis in your functions like this!
 --- !u!1 &1809042024
 GameObject:
   m_ObjectHideFlags: 0

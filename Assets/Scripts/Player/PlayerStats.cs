@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Kryz.CharacterStats;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -17,8 +18,10 @@ public class PlayerStats : MonoBehaviour
         StatModifier collisionDmg = new StatModifier(damage, StatModType.Flat);
         health.AddModifier(collisionDmg);
         
-        if (health.Value <= 0)
+        if (health.Value <= 0){
             Debug.Log("Game Over");
+            SceneManager.LoadScene("MainRoom", LoadSceneMode.Single);
+        }
     }
 
     public void CompleteUC(string uc) {
