@@ -7,7 +7,7 @@ public class ToFerreira : Enemy
 {
 
     public GameObject projectile;
-    private float healthValue = 50f;
+    private float healthValue = 200f;
     private float speedValue = 10;
     private int shotRange = 55;
 

@@ -8,7 +8,7 @@ public class AntonioCoelho : Enemy
 
     public GameObject projectile;
     public GameObject projectile2;
-    private float healthValue = 50f;
+    private float healthValue = 200f;
     private float speedValue = 10;
 
     private float minFireRate = 0.3f;
