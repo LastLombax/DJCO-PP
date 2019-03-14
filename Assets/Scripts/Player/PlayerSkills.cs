@@ -29,9 +29,13 @@ public class PlayerSkills : MonoBehaviour
     protected CharacterStat poisonDamage;
     protected CharacterStat poisonTime;
 
+    private Dictionary<string, SkillTreeNode> fireBallNodes;
+    private Dictionary<string, SkillTreeNode> chainNodes;
+    private Dictionary<string, SkillTreeNode> poisonNodes;
+
     // Start is called before the first frame update
 
-    
+
     public static PlayerSkills Instance;
 
     void Awake()
@@ -56,6 +60,9 @@ public class PlayerSkills : MonoBehaviour
         poisonCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
         poisonDamage = new CharacterStat(5); //inital damage of 5
         poisonTime = new CharacterStat(2); //initial time = 2 seconds
+        fireBallNodes = new Dictionary<string, SkillTreeNode>();
+        chainNodes = new Dictionary<string, SkillTreeNode>();
+        poisonNodes = new Dictionary<string, SkillTreeNode>();
     }
 
 // Update is called once per frame
@@ -184,5 +191,35 @@ public class PlayerSkills : MonoBehaviour
     public void GainXP(int xpGained)
     {
         xp += xpGained;
+    }
+
+    public void StoreFireballTree(Dictionary<string, SkillTreeNode> tree)
+    {
+        fireBallNodes = tree;
+        Debug.Log(fireBallNodes);
+    }
+
+    public Dictionary<string, SkillTreeNode> GetFireballTree()
+    {
+        Debug.Log(fireBallNodes);
+        return fireBallNodes;
+    }
+
+    public void StoreChainTree(Dictionary<string, SkillTreeNode> tree)
+    {
+        chainNodes = tree;
+    }
+    public Dictionary<string, SkillTreeNode> GetChainTree()
+    {
+        return chainNodes;
+    }
+
+    public void StorePoisonTree(Dictionary<string, SkillTreeNode> tree)
+    {
+        poisonNodes = tree;
+    }
+    public Dictionary<string, SkillTreeNode> GetPoisonTree()
+    {
+        return poisonNodes;
     }
 }

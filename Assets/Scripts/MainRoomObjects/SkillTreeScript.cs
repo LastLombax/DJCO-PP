@@ -11,24 +11,34 @@ public class SkillTreeScript : MonoBehaviour
     public GameObject SkillTreeUI;
     private GameObject player;
     private Vector3 PlayerPos;
-
-    private SkillTreeScript fireballTreeInstance;
-    private SkillTreeScript chainTreeInstance;
-    private SkillTreeScript poisonTreeInstance;
-
-    void Awake()
-    {
-
-    }
-        void Start()
+    
+    void Start()
     {
         player = GameObject.Find("Player");
         buttons = new Dictionary<string, GameObject>();
         nodes = new Dictionary<string, SkillTreeNode>();
 
-        CreateSkillTreeFireBall();
-        CreateSkillTreeChainLightning();
-        CreateSkillTreePoisonPuddle();
+        if(player.GetComponent<PlayerSkills>().GetFireballTree().Count == 0)
+        {
+            CreateSkillTreeFireBall();
+        } else
+        {
+            nodes = player.GetComponent<PlayerSkills>().GetFireballTree();
+        }
+        if (player.GetComponent<PlayerSkills>().GetChainTree().Count == 0)
+        {
+            CreateSkillTreeChainLightning();
+        } else
+        {
+            nodes = player.GetComponent<PlayerSkills>().GetChainTree();
+        }
+        if (player.GetComponent<PlayerSkills>().GetPoisonTree().Count == 0)
+        {
+            CreateSkillTreePoisonPuddle();
+        } else
+        {
+            nodes = player.GetComponent<PlayerSkills>().GetPoisonTree();
+        }
         UpdateButtonsStatus();
     }
 
@@ -220,6 +230,18 @@ public class SkillTreeScript : MonoBehaviour
     public void CloseTree()
     {
         SkillTreeUI.SetActive(false);
+        if(gameObject.tag.Equals("FireBallSkillTree"))
+        {
+            player.GetComponent<PlayerSkills>().StoreFireballTree(nodes);
+        }
+        if (gameObject.tag.Equals("ChainSkillTree"))
+        {
+            player.GetComponent<PlayerSkills>().StoreChainTree(nodes);
+        }
+        if (gameObject.tag.Equals("PoisonSkillTree"))
+        {
+            player.GetComponent<PlayerSkills>().StorePoisonTree(nodes);
+        }
     }
     
     public void UpgradeSkill(string id)
