@@ -11,6 +11,8 @@ public class SkillTreeScript : MonoBehaviour
     Dictionary<string, SkillTreeNode> nodes;
     public GameObject SkillTreeUI;
     public GameObject skillNodeDescription;
+
+    public GameObject PlayerXP;
     private GameObject player;
     private Vector3 PlayerPos;
     
@@ -277,7 +279,8 @@ public class SkillTreeScript : MonoBehaviour
     }
 
     public void UpdateButtonsStatus()
-    {
+    {        
+        PlayerXP.GetComponent<Text>().text = "XP: " + player.GetComponent<PlayerSkills>().xp;
         foreach(string id in buttons.Keys)
         {
             if(nodes[id].IsActive())

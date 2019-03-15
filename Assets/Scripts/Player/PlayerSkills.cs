@@ -14,7 +14,7 @@ public class PlayerSkills : MonoBehaviour
     public float nextFireChain = 0;
     public float nextFirePoison = 0;
 
-    private int xp;
+    public int xp;
 
     protected CharacterStat fireBallRange;
     protected CharacterStat fireBallCooldown;

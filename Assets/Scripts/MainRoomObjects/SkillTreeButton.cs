@@ -37,7 +37,6 @@ public class SkillTreeButton : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        Debug.Log("here");
         skillTree.GetComponent<SkillTreeScript>().UpdateDescription(buffID);
     }
 
