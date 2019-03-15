@@ -46,7 +46,6 @@ public class Torcato : MonoBehaviour
 
     public void CheckAnswer(bool answer) 
     {
-        Debug.Log(level);
         state = state && (answer == answers[level]);
         level++;
         if (level < answers.Length){

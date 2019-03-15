@@ -251,21 +251,17 @@ public class SkillTreeScript : MonoBehaviour
     {
         if(!player.GetComponent<PlayerSkills>().HasEnoughXP(nodes[id].GetXpPrice()))
         {
-            Debug.Log("Not enough xp for that");
             return;
         }
         foreach (string fatherId in nodes[id].fathers)
         {
-            Debug.Log(fatherId);
             if(!nodes[fatherId].IsActive())
             {
-                Debug.Log("Missing some nodes for that one...");
                 return;
             }
         }
         if(nodes[id].IsActive())
         {
-            Debug.Log("Already picked that node!");
             return;
         }
         player.GetComponent<PlayerSkills>().UpgradeSkill(nodes[id].GetUpgradeType(), nodes[id].GetValue());

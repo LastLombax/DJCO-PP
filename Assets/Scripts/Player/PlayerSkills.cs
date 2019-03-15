@@ -180,10 +180,6 @@ public class PlayerSkills : MonoBehaviour
 
     public void UseXP(int xpUsed)
     {
-        if(xp < xpUsed)
-        {
-            Debug.Log("Not enough xp for that, pls check code, test first with HasEnoughXP(int)");
-        }
         xp -= xpUsed;
     }
 
@@ -195,12 +191,10 @@ public class PlayerSkills : MonoBehaviour
     public void StoreFireballTree(Dictionary<string, SkillTreeNode> tree)
     {
         fireBallNodes = tree;
-        Debug.Log(fireBallNodes);
     }
 
     public Dictionary<string, SkillTreeNode> GetFireballTree()
     {
-        Debug.Log(fireBallNodes);
         return fireBallNodes;
     }
 
