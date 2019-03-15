@@ -33,4 +33,16 @@ public class SkillTreeButton : MonoBehaviour
     {
         GetComponent<Image>().color = Color.grey;
     }
+    
+
+    public void OnMouseEnter()
+    {
+        Debug.Log("here");
+        skillTree.GetComponent<SkillTreeScript>().UpdateDescription(buffID);
+    }
+
+    public void OnMouseExit()
+    {
+        skillTree.GetComponent<SkillTreeScript>().UpdateDescription("none");
+    }
 }
