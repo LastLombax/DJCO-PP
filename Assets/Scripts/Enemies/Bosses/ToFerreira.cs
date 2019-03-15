@@ -46,14 +46,12 @@ public class ToFerreira : Enemy
             }
 
             if (health.Value <= healthValue / 2 && attackSpeed == 1) {
-                Debug.Log("Half HP");
                 attackSpeed *= 2;
                 StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
                 speed.AddModifier(mod);
             }
 
             if (health.Value <= healthValue / 4 && attackSpeed == 2) {
-                Debug.Log("Quarter HP");
                 attackSpeed *= 2;
                 StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
                 speed.AddModifier(mod);
@@ -98,7 +96,7 @@ public class ToFerreira : Enemy
         nextMovement = Time.time + currentMovementDuration;
     }
 
-    private void EnemyMovement()
+    private new void EnemyMovement()
     {
         Vector3 moveVec = new Vector3(0f,0f,0f);
         switch(movement) {
