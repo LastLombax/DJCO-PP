@@ -6,18 +6,19 @@ public class Swarmer : Enemy
 {
     public GameObject spawnedEnemy;
 
-    private float healthValue = 5f;
+    private float healthValue = 100f;
     private float speedValue = 0f;
     private int exp = 30;
     private float nextSpawn = 0;
-    private float spawnRate = 3;
+    private float spawnRate = 7;
 
     //private int maxChildren = 4;
 
     void Start() {
         nextSpawn = Time.time + spawnRate;
         player = GameObject.Find("Player");
-        setStats(healthValue,speedValue);
+        int mult = player.GetComponent<PlayerStats>().bossesDefeated + 1;
+        setStats(healthValue * mult,speedValue);
         setXP(exp);
     }
 

@@ -21,6 +21,9 @@ public class PlayerStats : MonoBehaviour
         if (health.Value <= 0){
             Debug.Log("Game Over");
             SceneManager.LoadScene("MainRoom", LoadSceneMode.Single);
+            StatModifier healBack = new StatModifier(health.BaseValue, StatModType.Flat);
+            health.AddModifier(healBack);
+            // health.RemoveAllModifiersFromSource(health);
         }
     }
 

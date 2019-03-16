@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class Melee : Enemy {
 
-    private float healthValue = 2f;
+    private float healthValue = 30f;
     private float speedValue = 10;
     private int exp = 15;
 
     void Start() {
         player = GameObject.Find("Player");
-        setStats(healthValue,speedValue);
+        int mult = player.GetComponent<PlayerStats>().bossesDefeated + 1;
+        setStats(healthValue * mult, speedValue);
         setXP(exp);
     }
 

@@ -11,6 +11,7 @@ public class ToFerreira : Enemy
     private float healthValue = 200f;
     private float speedValue = 10;
     private int shotRange = 55;
+    private int exp = 100;
 
     private float minFireRate = 0.5f;
     private float maxFireRate = 1f;
@@ -26,6 +27,7 @@ public class ToFerreira : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        setXP(exp);
         NextShotTime();
         NextMovement();
         player = GameObject.Find("Player");

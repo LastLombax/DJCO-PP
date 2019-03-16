@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ranged : Enemy {
 
     public GameObject projectile;
-    private float healthValue = 5f;
+    private float healthValue = 60f;
     private float speedValue = 0f;
     private int exp = 20;
 
@@ -17,7 +17,8 @@ public class Ranged : Enemy {
     {
         nextFire = Time.time + fireRate;
         player = GameObject.Find("Player");
-        setStats(healthValue,speedValue);
+        int mult = player.GetComponent<PlayerStats>().bossesDefeated + 1;
+        setStats(healthValue * mult, speedValue);
         setXP(exp);
     }
 
