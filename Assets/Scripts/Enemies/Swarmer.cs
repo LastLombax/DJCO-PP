@@ -14,6 +14,8 @@ public class Swarmer : Enemy
 
     //private int maxChildren = 4;
 
+    public Sprite spawnedSprite;
+
     void Start() {
         nextSpawn = Time.time + spawnRate;
         player = GameObject.Find("Player");
@@ -39,6 +41,8 @@ public class Swarmer : Enemy
         var shot = Instantiate(spawnedEnemy, projectilePos, Quaternion.identity);
         shot.transform.parent = this.transform;
         shot.GetComponent<Melee>().setEXP(0);
+        shot.GetComponent<SpriteRenderer>().sprite = spawnedSprite;
+        shot.GetComponent<Animator>().enabled = false;
 
         Physics2D.IgnoreCollision(shot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }

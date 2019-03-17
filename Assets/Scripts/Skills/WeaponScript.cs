@@ -51,7 +51,8 @@ public class WeaponScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.GetComponent<Enemy>().DmgCollision(damage * -1);
+        if (collision.gameObject.tag == "Enemy")
+            collision.gameObject.GetComponent<Enemy>().DmgCollision(damage * -1);
     }
 }
 

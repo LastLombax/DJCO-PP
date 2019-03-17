@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5634833293158175443}
   - component: {fileID: 5634833293158175442}
   - component: {fileID: 5634833293158175441}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 59839629
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 940a3f8f13a1ffa4d9f3211201fc56c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.033594444, y: -0.03966075}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0666666, y: 1.3333333}
+  m_Size: {x: 0.4008856, y: 0.54620755}
   m_EdgeRadius: 0
 --- !u!50 &5634833293158175445
 Rigidbody2D:
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map: {fileID: 0}
   skillTree: {fileID: 0}
-  impact: 1.2
+  FEUPLetters: {fileID: 0}
 --- !u!114 &5634833293158175441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,8 +219,9 @@ MonoBehaviour:
     type: 3}
   poisonProjectile: {fileID: 7343375271918280030, guid: ff70949471181da458bffbf8446ed3c1,
     type: 3}
-  weaponDistance: 4.5
+  weaponDistance: 8
   weapon: {fileID: 8057305092415899449, guid: 6b6c7c40ebbcf94418817db4cbdda3fe, type: 3}
   nextFireFireBall: 0
   nextFireChain: 0
   nextFirePoison: 0
+  xp: 0
