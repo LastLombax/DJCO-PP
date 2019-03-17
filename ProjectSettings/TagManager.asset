@@ -51,6 +51,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: DoorWallHidden
+    uniqueID: 1528318041
+    locked: 0
   - name: Floor
     uniqueID: 1822146739
     locked: 0
