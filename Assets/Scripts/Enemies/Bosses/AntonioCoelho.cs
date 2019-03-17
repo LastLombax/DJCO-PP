@@ -18,7 +18,6 @@ public class AntonioCoelho : Enemy
     private float nextFire = 0;
     private int ammo = 15;
     private float attackSpeed = 1;
-
     private int shotRange = 55;
     private bool phase = false;
     private int movement;
@@ -26,6 +25,7 @@ public class AntonioCoelho : Enemy
     private float currentMovementDuration;
     private float minMoveChangeTime = 1;
     private float maxMoveChangeTime = 2;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +35,8 @@ public class AntonioCoelho : Enemy
         NextMovement();
         player = GameObject.Find("Player");
         setStats(healthValue, speedValue);
+        anim = GetComponent<Animator>();
+        anim.enabled = false;
 
     }
 
@@ -45,6 +47,7 @@ public class AntonioCoelho : Enemy
 
             EnemyRotation();
             EnemyMovement();
+            anim.enabled = true;
 
             if (ammo <= 0) {
                 phase = !phase;

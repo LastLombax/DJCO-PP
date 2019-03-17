@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Ranged : Enemy {
 
     public GameObject projectile;
@@ -19,7 +18,7 @@ public class Ranged : Enemy {
         player = GameObject.Find("Player");
         int mult = player.GetComponent<PlayerStats>().bossesDefeated + 1;
         setStats(healthValue * mult, speedValue);
-        setXP(exp);
+        setXP(exp);        
     }
 
     // Update is called once per frame

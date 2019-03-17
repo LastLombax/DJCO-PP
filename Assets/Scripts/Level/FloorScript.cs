@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FloorScript : MonoBehaviour
 {
-    private bool isPlayerHere = false;
+    public bool isPlayerHere = false;
     private ArrayList enemies;
     // Start is called before the first frame update
     void Start()
