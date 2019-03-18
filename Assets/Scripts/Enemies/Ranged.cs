@@ -16,8 +16,7 @@ public class Ranged : Enemy {
     {
         nextFire = Time.time + fireRate;
         player = GameObject.Find("Player");
-        int mult = player.GetComponent<PlayerStats>().bossesDefeated + 1;
-        setStats(healthValue * mult, speedValue);
+        setStats(healthValue, speedValue);
         setXP(exp);        
     }
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MapScript : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class MapScript : MonoBehaviour
     {
         PlayerPos = Player.transform.position;
         MapUI.SetActive(true);
+        foreach(string uc in Player.GetComponent<PlayerStats>().ucsCompleted) {
+            MapUI.transform.Find(uc).gameObject.GetComponent<Image>().color = Color.green;
+        }
+
     }
 
     public void CloseMap()

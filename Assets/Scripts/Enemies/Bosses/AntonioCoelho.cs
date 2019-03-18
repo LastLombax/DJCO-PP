@@ -34,6 +34,7 @@ public class AntonioCoelho : Enemy
         NextShotTime();
         NextMovement();
         player = GameObject.Find("Player");
+        boss = "FPRO";
         setStats(healthValue, speedValue);
         anim = GetComponent<Animator>();
         anim.enabled = false;

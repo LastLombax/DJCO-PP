@@ -1871,6 +1871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df796ecb255569841afaba207a3c1686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 1819458445814244414, guid: 9d558b3fa2b919a4295cd56cc8361ea8, type: 3}
   dm: {fileID: 333710784}
   projectile: {fileID: 2630658900114574029, guid: 06edd0a3ede6565428c03648ab0a572e,
     type: 3}

@@ -31,6 +31,7 @@ public class ToFerreira : Enemy
         NextShotTime();
         NextMovement();
         player = GameObject.Find("Player");
+        boss = "ALGE";
         setStats(healthValue, speedValue);
         anim = GetComponent<Animator>();
         anim.enabled = false;
