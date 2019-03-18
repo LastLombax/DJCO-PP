@@ -67,4 +67,9 @@ public abstract class Enemy : MonoBehaviour
         xp = exp;
     }
 
+    public float getEnemyHealthPercentage()
+    {
+        return health.Value / health.BaseValue;
+    }
+
 }

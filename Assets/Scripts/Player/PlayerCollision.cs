@@ -12,17 +12,17 @@ public class PlayerCollision : MonoBehaviour
 
     private static bool playerExists;
 
-    private float impact = 10000f;
+    private float impact = 500000f;
 
     private Vector3 knockBackDirection;
     private float knockBackDuration = 0.5f;
-    private float knockBackEnd = 0;
+    public float knockBackEnd = 0;
 
     void Update()
     {
         if(knockBackEnd > Time.time)
         {
-            GetComponent<Rigidbody2D>().AddForce(knockBackDirection * impact * (knockBackEnd - Time.time));
+            GetComponent<Rigidbody2D>().AddForce(knockBackDirection * impact * Time.deltaTime * (knockBackEnd - Time.time));
             //transform.position += knockBackDirection * impact * (Time.deltaTime / knockBackDuration);
         }
     }

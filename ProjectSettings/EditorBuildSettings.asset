@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/MDIS.unity
     guid: 2e78d250fdf77b34686fa0b5f8b6dbc0
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: f83e9e4793bae2741b442e9f670cea2b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

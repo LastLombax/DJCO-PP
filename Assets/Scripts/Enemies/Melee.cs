@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Melee : Enemy {
 
-    private float healthValue = 30f;
+    public float healthValue = 30f;
     private float speedValue = 10;
     private int exp = 15;
 

@@ -40,6 +40,7 @@ public class TeleportScript : MonoBehaviour
         nextOpen = Time.time + timeOut;
         otherDoor.GetComponent<TeleportScript>().updateTimeOut();
         collision.gameObject.transform.position = otherDoor.transform.position;
+        collision.gameObject.GetComponent<PlayerCollision>().knockBackEnd = 0;
         float camX = otherDoor.GetComponent<TeleportScript>().room.transform.position.x;
         float camY = otherDoor.GetComponent<TeleportScript>().room.transform.position.y;
         Camera.main.transform.position = new Vector3(camX, camY, -10);
