@@ -43,7 +43,9 @@ public class Swarmer : Enemy
         shot.GetComponent<Melee>().setEXP(0);
         shot.GetComponent<SpriteRenderer>().sprite = spawnedSprite;
         shot.GetComponent<Animator>().enabled = false;
+        Destroy(shot.GetComponent<BoxCollider2D>());
+        shot.AddComponent<PolygonCollider2D>();
 
-        Physics2D.IgnoreCollision(shot.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        Physics2D.IgnoreCollision(shot.GetComponent<PolygonCollider2D>(), GetComponent<Collider2D>());
     }
 }

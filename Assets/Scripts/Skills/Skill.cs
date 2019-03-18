@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Skill : MonoBehaviour
 {
+    public AudioClip sound;
     protected Rigidbody2D rb;
     protected Vector3 startingPos;
     protected float velX;

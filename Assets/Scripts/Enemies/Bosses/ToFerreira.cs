@@ -32,6 +32,8 @@ public class ToFerreira : Enemy
         NextMovement();
         player = GameObject.Find("Player");
         setStats(healthValue, speedValue);
+        anim = GetComponent<Animator>();
+        anim.enabled = false;
 
     }
 
@@ -41,6 +43,8 @@ public class ToFerreira : Enemy
         if (dm.dialogueEnd){
             EnemyRotation();
             EnemyMovement();
+            anim.enabled = true;
+
 
             if (ammo <= 0) {
                 nextFire += 4;

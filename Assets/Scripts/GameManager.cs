@@ -40,8 +40,9 @@ public class GameManager : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
+        var player = GameObject.Find("Player");
         if (scene.name == "MainRoom"){
-            var player = GameObject.Find("Player");
+            player.GetComponent<AudioSource>().Stop();
             player.transform.position = new Vector3(-8f, 290f, 0);
             player.gameObject.GetComponent<PlayerMobility>().frozen = false;
             player.gameObject.GetComponent<PlayerSkills>().enabled = true;
@@ -50,6 +51,10 @@ public class GameManager : MonoBehaviour
             player.GetComponent<PlayerCollision>().FEUPLetters = GameObject.Find("FEUPLetters");
             player.GetComponent<PlayerCollision>().FEUPLetters.GetComponent<Animator>().enabled = false;
         }
-            
+        else {
+            player.GetComponent<AudioSource>().time = 1f;
+            player.GetComponent<AudioSource>().Play();
+        }
+
     }
 }
