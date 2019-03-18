@@ -9,6 +9,7 @@ public class WeaponScript : MonoBehaviour
 
     private GameObject player;
 
+    private AudioSource audioSource;
     private float rotationSpeed = 360;
 
     private float startAng, endAng, currentAng;
@@ -18,9 +19,12 @@ public class WeaponScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        audioSource = GetComponent<AudioSource>();
+        audioSource.time = 1.3f;
+        audioSource.Play(); 
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
-
+        
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Quaternion rot = Quaternion.LookRotation(mousePosition - player.transform.position, Vector3.forward);
         previousPlayerPos = player.transform.position;

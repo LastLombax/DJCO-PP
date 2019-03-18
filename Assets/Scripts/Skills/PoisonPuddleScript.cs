@@ -12,6 +12,7 @@ public class PoisonPuddleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().Play();
         enemiesNextDamageTick = new Dictionary<GameObject, float>();
         startTime = Time.time;
     }

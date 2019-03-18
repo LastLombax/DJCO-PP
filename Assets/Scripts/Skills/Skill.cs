@@ -11,6 +11,11 @@ public class Skill : MonoBehaviour
     protected float velY;
 
     protected void Setup(){
+        AudioSource audio = gameObject.AddComponent<AudioSource>();
+        audio.clip = sound;
+        audio.playOnAwake = false;
+        audio.loop = false;
+        audio.Play();
         startingPos = transform.position;
         rb = GetComponent<Rigidbody2D>();
     }
