@@ -16,6 +16,7 @@ public class Torcato : MonoBehaviour
     private int level;
     private bool state;
     private bool over;
+    private bool done;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Torcato : MonoBehaviour
         level = 0;
         state = true;
         over = false;
+        done = false;
         world = GameObject.Find("world");
         sentences = GameObject.Find("rules");
     }
@@ -34,12 +36,14 @@ public class Torcato : MonoBehaviour
             over = true;
         }
 
-        if (over) {
+        if (over && !done) {
+            done = true;
             if (state) {
                 Debug.Log("Passaste");
             } else {
                 Debug.Log("Lamento, mas não obtiveste uma classificação satisfatória...");
             }
+            GameObject.Find("Player").GetComponent<PlayerStats>().CompleteUC("MDIS");
             StartCoroutine(gm.Load2Scene("MainRoom"));
         }
     }

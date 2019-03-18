@@ -8,8 +8,7 @@ public class Melee : Enemy {
 
     void Start() {
         player = GameObject.Find("Player");
-        int mult = player.GetComponent<PlayerStats>().bossesDefeated + 1;
-        setStats(healthValue * mult, speedValue);
+        setStats(healthValue, speedValue);
         setXP(exp);
     }
 

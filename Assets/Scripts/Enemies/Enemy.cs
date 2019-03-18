@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    public GameManager gm;
+    protected string boss = "";
     protected GameObject player;
     protected CharacterStat health;
     protected CharacterStat speed;
@@ -15,7 +17,8 @@ public abstract class Enemy : MonoBehaviour
 
     public void setStats(float healthValue, float speedValue){
         rb = GetComponent<Rigidbody2D>();
-        health = new CharacterStat(healthValue);
+        int mult = player.GetComponent<PlayerStats>().bossesDefeated + 1;
+        health = new CharacterStat(healthValue * mult);
         speed = new CharacterStat(speedValue);
     }
 
@@ -54,6 +57,11 @@ public abstract class Enemy : MonoBehaviour
         if (health.Value <= 0){
             PlayerSkills ps = (PlayerSkills)player.GetComponent(typeof(PlayerSkills));
             ps.GainXP(xp);
+            if (boss != ""){
+                Debug.Log("Acho que a minha RAM não aguentava com tantos parentesis...");
+                player.GetComponent<PlayerStats>().CompleteUC(boss);
+                StartCoroutine(gm.Load2Scene("MainRoom"));
+            }
             Destroy(gameObject);
         }
             
@@ -71,5 +79,7 @@ public abstract class Enemy : MonoBehaviour
     {
         return health.Value / health.BaseValue;
     }
+
+
 
 }

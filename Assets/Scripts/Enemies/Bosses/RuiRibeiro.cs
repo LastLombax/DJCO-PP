@@ -38,8 +38,10 @@ public class RuiRibeiro : MonoBehaviour
                 else {
                     if (bossPoints >= objetive)
                         Debug.Log("Era so fazer as continhas... tás chumbado");
-                    else if (playerPoints >= objetive)
+                    else if (playerPoints >= objetive){
                         Debug.Log("Passaste");
+                        GameObject.Find("Player").GetComponent<PlayerStats>().CompleteUC("AMAT");
+                    }
                     StartCoroutine(gm.Load2Scene("MainRoom"));
                 }
             }
