@@ -14,7 +14,8 @@ public class WeaponScript : MonoBehaviour
 
     private float startAng, endAng, currentAng;
     private Vector3 previousPlayerPos;
-    private float damage = 5;
+    private float damage = 12;
+    private bool isRightDirection = true;
 
     // Start is called before the first frame update
     void Start()
@@ -30,30 +31,52 @@ public class WeaponScript : MonoBehaviour
         previousPlayerPos = player.transform.position;
 
         var midAng = rot.eulerAngles.z;
-        currentAng = startAng = midAng + offsetAng;
-        endAng = midAng - offsetAng;
+        isRightDirection = midAng <= 180;
+        if(isRightDirection)
+        {
+            currentAng = startAng = midAng + offsetAng;
+            endAng = midAng - offsetAng;
+        } else
+        {
+            currentAng = startAng = midAng - offsetAng;
+            endAng = midAng + offsetAng;
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
 
         var rotationVector = transform.rotation.eulerAngles;
-        rotationVector.z = (-currentAng + 160)%360;
+        rotationVector.z = (180 - currentAng)%360;
         transform.rotation = Quaternion.Euler(rotationVector);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentAng <= endAng)
-           Destroy(gameObject);   
+        if (currentAng <= endAng && isRightDirection)
+           Destroy(gameObject);
+        if (currentAng >= endAng && !isRightDirection)
+        {
+            Destroy(gameObject);
+        }
         else
         {
-            transform.RotateAround(player.transform.position, Vector3.back, rotationSpeed * Time.deltaTime);
-            currentAng -= rotationSpeed * Time.deltaTime;
+            if(isRightDirection)
+            {
+                transform.RotateAround(player.transform.position, Vector3.back, rotationSpeed * Time.deltaTime);
+                currentAng -= rotationSpeed * Time.deltaTime;
+            } else
+            {
+                transform.RotateAround(player.transform.position, Vector3.forward, rotationSpeed * Time.deltaTime);
+                currentAng += rotationSpeed * Time.deltaTime;
+            }
+            
+            
             var positionDiference = player.transform.position - previousPlayerPos;
             previousPlayerPos = player.transform.position;
             transform.position += positionDiference;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
             collision.gameObject.GetComponent<Enemy>().DmgCollision(damage * -1);
