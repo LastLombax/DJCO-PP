@@ -44,5 +44,6 @@ public class TeleportScript : MonoBehaviour
         float camX = otherDoor.GetComponent<TeleportScript>().room.transform.position.x;
         float camY = otherDoor.GetComponent<TeleportScript>().room.transform.position.y;
         Camera.main.transform.position = new Vector3(camX, camY, -10);
+        GameObject.Find("healthBackGround").GetComponent<HealthBarScript>().RefreshPosition();
     }
 }

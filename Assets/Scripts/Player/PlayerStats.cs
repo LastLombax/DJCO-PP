@@ -25,14 +25,14 @@ public class PlayerStats : MonoBehaviour
     {
         StatModifier collisionDmg = new StatModifier(damage, StatModType.Flat);
         health.AddModifier(collisionDmg);
-        healthBar.GetComponent<Slider>().value = health.Value / health.BaseValue;
+        GameObject.Find("healthSlider").GetComponent<HealthBarSlider>().ChangeLife(health.Value / health.BaseValue);
         
         if (health.Value <= 0){
             gameObject.GetComponent<PlayerCollision>().knockBackEnd = 0;
             SceneManager.LoadScene("MainRoom", LoadSceneMode.Single);
             StatModifier healBack = new StatModifier(health.BaseValue, StatModType.Flat);
             health.AddModifier(healBack);
-            healthBar.GetComponent<Slider>().value = health.Value / health.BaseValue;
+            GameObject.Find("healthSlider").GetComponent<HealthBarSlider>().ChangeLife(health.Value / health.BaseValue);
             // health.RemoveAllModifiersFromSource(health);
         }
     }

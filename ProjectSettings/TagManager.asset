@@ -73,3 +73,9 @@ TagManager:
   - name: Door
     uniqueID: 3177551717
     locked: 0
+  - name: HealthBar
+    uniqueID: 3600554431
+    locked: 0
+  - name: HealthBarSlider
+    uniqueID: 3584612809
+    locked: 0
