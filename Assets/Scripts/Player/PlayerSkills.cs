@@ -8,7 +8,7 @@ public class PlayerSkills : MonoBehaviour
     public GameObject fireBallProjectile;
     public GameObject chainProjectile;
     public GameObject poisonProjectile;
-    public float weaponDistance = 1.5f;
+    public float weaponDistance = 2f;
     public GameObject weapon;
     public float nextFireFireBall = 0;
     public float nextFireChain = 0;
@@ -117,8 +117,15 @@ public class PlayerSkills : MonoBehaviour
         Vector3 dirNormalized = direction.normalized;
         float dirX = Mathf.Cos(Mathf.PI / 3 + Mathf.Atan2(dirNormalized.y,dirNormalized.x));
         float dirY = Mathf.Sin(Mathf.PI / 3 + Mathf.Atan2(dirNormalized.y, dirNormalized.x));
-        Vector3 directionShifted = new Vector3(dirX, dirY, 0);
-     
+        Vector3 directionShifted;
+        Debug.Log(direction.x);
+        if (direction.x > 0)
+        {
+            directionShifted = new Vector3(dirX, dirY, 0);
+        } else
+        {
+            directionShifted = new Vector3(-dirX, -dirY, 0);
+        }
         Vector3 weaponPos = transform.position + directionShifted * weaponDistance;
 
         var attack = Instantiate(weapon, weaponPos, Quaternion.identity);

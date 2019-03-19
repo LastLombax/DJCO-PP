@@ -3,8 +3,7 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    public GameManager gm;
-    protected string boss = "";
+    public string boss = "";
     protected GameObject player;
     protected CharacterStat health;
     protected CharacterStat speed;
@@ -58,9 +57,9 @@ public abstract class Enemy : MonoBehaviour
             PlayerSkills ps = (PlayerSkills)player.GetComponent(typeof(PlayerSkills));
             ps.GainXP(xp);
             if (boss != ""){
-                Debug.Log("Acho que a minha RAM não aguentava com tantos parentesis...");
+                Debug.Log("Pronto passaste, toma lá os ECTs...");
                 player.GetComponent<PlayerStats>().CompleteUC(boss);
-                StartCoroutine(gm.Load2Scene("MainRoom"));
+                GameObject.Find("Teleporter").GetComponent<Teleporter>().Leave();
             }
             Destroy(gameObject);
         }

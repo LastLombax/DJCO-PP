@@ -9,10 +9,11 @@ public class AntonioCoelho : Enemy
 
     public GameObject projectile;
     public GameObject projectile2;
-    private float healthValue = 200f;
+    private float healthValue = 600f;
     private float speedValue = 10;
     private int exp = 100;
 
+    private float reloadTime = 5;
     private float minFireRate = 0.3f;
     private float maxFireRate = 0.7f;
     private float nextFire = 0;
@@ -52,18 +53,24 @@ public class AntonioCoelho : Enemy
 
             if (ammo <= 0) {
                 phase = !phase;
-                nextFire += 5;
+                nextFire += reloadTime;
                 ammo = 15;
             }
 
             if (health.Value <= healthValue / 2 && attackSpeed == 1) {
                 attackSpeed *= 2;
+                reloadTime -= 2;
+                minMoveChangeTime /= 2;
+                maxMoveChangeTime /= 2;
                 StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
                 speed.AddModifier(mod);
             }
 
             if (health.Value <= healthValue / 4 && attackSpeed == 2) {
                 attackSpeed *= 2;
+                reloadTime -= 2;
+                minMoveChangeTime /= 2;
+                maxMoveChangeTime /= 2;
                 StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
                 speed.AddModifier(mod);
             }
