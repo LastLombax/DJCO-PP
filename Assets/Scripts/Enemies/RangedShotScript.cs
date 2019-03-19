@@ -14,8 +14,8 @@ public class RangedShotScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startingPos = transform.position;
-
+        startingPos = transform.position;        
+        GetComponent<AudioSource>().Play();
         var playerPosition = GameObject.Find("Player").transform.position;
         Vector3 direction = startingPos - playerPosition;
         var dirLength = direction.magnitude;

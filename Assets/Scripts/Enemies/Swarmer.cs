@@ -36,6 +36,7 @@ public class Swarmer : Enemy
 
     private void spawn()
     {
+        GetComponent<AudioSource>().Play();
         var projectilePos = transform.position;
         var shot = Instantiate(spawnedEnemy, projectilePos, Quaternion.identity);
         shot.transform.parent = this.transform;
