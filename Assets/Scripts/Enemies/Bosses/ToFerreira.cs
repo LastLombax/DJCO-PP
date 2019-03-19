@@ -8,11 +8,12 @@ public class ToFerreira : Enemy
 
     public DialogueManager dm;
     public GameObject projectile;
-    private float healthValue = 200f;
+    private float healthValue = 600f;
     private float speedValue = 10;
     private int shotRange = 55;
     private int exp = 100;
 
+    private float reloadTime = 5;
     private float minFireRate = 0.5f;
     private float maxFireRate = 1f;
     private float nextFire = 0;
@@ -48,18 +49,22 @@ public class ToFerreira : Enemy
 
 
             if (ammo <= 0) {
-                nextFire += 4;
+                nextFire += reloadTime;
                 ammo = 7;
             }
 
             if (health.Value <= healthValue / 2 && attackSpeed == 1) {
                 attackSpeed *= 2;
+                reloadTime -= 2;
+                minMoveChangeTime /= 2;
+                maxMoveChangeTime /= 2;
                 StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
                 speed.AddModifier(mod);
             }
 
             if (health.Value <= healthValue / 4 && attackSpeed == 2) {
                 attackSpeed *= 2;
+                reloadTime -= 2;
                 StatModifier mod = new StatModifier(1, StatModType.PercentAdd);
                 speed.AddModifier(mod);
             }
@@ -71,10 +76,10 @@ public class ToFerreira : Enemy
             
 
             if (Time.time >= nextMovement) {
-                if (movement != 0) {
+                if (movement != 3) {
                     NextMovement();
                 } else {
-                    movement = 1;
+                    movement = 2;
                     nextMovement = Time.time + currentMovementDuration;
                 }
             }
