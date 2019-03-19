@@ -52,8 +52,9 @@ public class GameManager : MonoBehaviour
             player.GetComponent<PlayerCollision>().skillTree = GameObject.Find("SkillTreeFireBall");
             player.GetComponent<PlayerCollision>().FEUPLetters = GameObject.Find("FEUPLetters");
             player.GetComponent<PlayerCollision>().FEUPLetters.GetComponent<Animator>().enabled = false;
-        }
-        else {
+        } else if (scene.name == "StartMenu") {
+            player.GetComponent<AudioSource>().Stop();
+        } else {
             player.GetComponent<AudioSource>().time = 1f;
             player.GetComponent<AudioSource>().Play();
         }
