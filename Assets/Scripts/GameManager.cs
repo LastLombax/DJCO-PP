@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
             player.transform.position = new Vector3(-8f, 290f, 0);
             player.gameObject.GetComponent<PlayerMobility>().frozen = false;
             player.gameObject.GetComponent<PlayerSkills>().enabled = true;
+            player.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+
             player.GetComponent<PlayerCollision>().map = GameObject.Find("Map");
             player.GetComponent<PlayerCollision>().skillTree = GameObject.Find("SkillTreeFireBall");
             player.GetComponent<PlayerCollision>().FEUPLetters = GameObject.Find("FEUPLetters");

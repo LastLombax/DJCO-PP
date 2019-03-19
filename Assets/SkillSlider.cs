@@ -9,6 +9,8 @@ public class SkillSlider : MonoBehaviour
     private float initialWidth;
     private Vector3 localScale;
     private float scaleX;
+
+    private bool canBeUsed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,9 +44,14 @@ public class SkillSlider : MonoBehaviour
         transform.localScale = localScale;
         if(cdPercentage == 1)
         {
-            GetComponent<SpriteRenderer>().color = Color.green;
+            if (!canBeUsed){
+                GetComponent<AudioSource>().Play();
+                canBeUsed = true;
+                GetComponent<SpriteRenderer>().color = Color.green;
+            }
         } else
-        {
+        {   
+            canBeUsed = false;
             GetComponent<SpriteRenderer>().color = Color.yellow;
         }
     }
