@@ -24,6 +24,7 @@ public class RuiRibeiro : MonoBehaviour
     public DialogueManager dm;
     public GameManager gm;
     private bool over = false;
+    private bool done = false;
     private int countdown = 4;
 
     void Update(){
@@ -35,10 +36,11 @@ public class RuiRibeiro : MonoBehaviour
                 if (!over){
                     ManageGame();
                 }
-                else {
-                    if (bossPoints >= objetive)
+                else if (!done){
+                    done = true;
+                    if (bossPoints >= objetive) {
                         Debug.Log("Era so fazer as continhas... tás chumbado");
-                    else if (playerPoints >= objetive){
+                    } else if (playerPoints >= objetive) {
                         Debug.Log("Passaste");
                         GameObject.Find("Player").GetComponent<PlayerStats>().CompleteUC("AMAT");
                     }
