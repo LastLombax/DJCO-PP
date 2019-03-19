@@ -1609,6 +1609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &288641814
 BoxCollider2D:
@@ -2686,6 +2687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &394264567
 BoxCollider2D:
@@ -3172,6 +3174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &504731731
 BoxCollider2D:
@@ -3361,6 +3364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &535640142
 BoxCollider2D:
@@ -4366,6 +4370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &702871046
 BoxCollider2D:
@@ -4585,6 +4590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &731485022
 BoxCollider2D:
@@ -4879,6 +4885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &840320024
 BoxCollider2D:
@@ -4999,6 +5006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &851071149
 BoxCollider2D:
@@ -5590,7 +5598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32, y: -203}
+  m_AnchoredPosition: {x: -24, y: -171}
   m_SizeDelta: {x: 320, y: 510}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932278162
@@ -6114,7 +6122,7 @@ MonoBehaviour:
     sentences:
     - Are you ready for your final exam, student?
     - Many have failed this journey... will you prevail?
-    - Funny because his does remind me of a story from many years ago...
+    - Funny because this does remind me of a story from many years ago...
     - '...'
     - '...'
     - '...'
@@ -6580,7 +6588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 149, y: -128}
+  m_AnchoredPosition: {x: 306, y: -260}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166721121
@@ -7485,6 +7493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1278279171
 BoxCollider2D:
@@ -8307,6 +8316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1411224734
 BoxCollider2D:
@@ -8586,7 +8596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -87, y: 60}
+  m_AnchoredPosition: {x: -175, y: 176}
   m_SizeDelta: {x: 300, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444762282
@@ -8678,6 +8688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1458315778
 BoxCollider2D:
@@ -8859,6 +8870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1465829145
 BoxCollider2D:
@@ -9660,6 +9672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1609890957
 BoxCollider2D:

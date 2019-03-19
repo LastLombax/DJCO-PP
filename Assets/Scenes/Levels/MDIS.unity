@@ -865,6 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &251171595
 BoxCollider2D:
@@ -1106,6 +1107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &299388286
 BoxCollider2D:
@@ -2003,6 +2005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &671334582
 BoxCollider2D:
@@ -2599,6 +2602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &804995092
 BoxCollider2D:
@@ -3163,8 +3167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -78, y: -153}
-  m_SizeDelta: {x: 364, y: 52.8}
+  m_AnchoredPosition: {x: -96.3, y: -284.2}
+  m_SizeDelta: {x: 622.6, y: 52.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932278162
 MonoBehaviour:
@@ -3491,6 +3495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1020338069
 BoxCollider2D:
@@ -3752,7 +3757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: -153}
+  m_AnchoredPosition: {x: 295, y: -295.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166721121
@@ -4431,6 +4436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1306174522
 BoxCollider2D:
@@ -4786,6 +4792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1365775041
 BoxCollider2D:
@@ -5081,7 +5088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41.8, y: 143.5}
+  m_AnchoredPosition: {x: -187, y: 251}
   m_SizeDelta: {x: 412.4, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444762282
@@ -5946,6 +5953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1710383178
 BoxCollider2D:
@@ -6377,6 +6385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1748581465
 BoxCollider2D:
@@ -6593,6 +6602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &1770675646
 BoxCollider2D:
@@ -8555,6 +8565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &2063238666
 BoxCollider2D:
@@ -8909,6 +8920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b1f6eac152be34d8362eea1534b063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   isPlayerHere: 0
 --- !u!61 &2103680219
 BoxCollider2D:
@@ -9067,7 +9079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2139040955
 MonoBehaviour:
   m_ObjectHideFlags: 0

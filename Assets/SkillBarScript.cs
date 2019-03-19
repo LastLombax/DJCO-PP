@@ -14,12 +14,6 @@ public class SkillBarScript : MonoBehaviour
         transform.position = new Vector3(positionCam.x, positionCam.y, 10);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void RefreshPosition()
     {
         Vector3 positionCam = Camera.main.ViewportToWorldPoint(new Vector3(xPos, yPos, 0));

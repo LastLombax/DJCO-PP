@@ -1294,15 +1294,15 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5634833293158175444, guid: 492b922924e75a6458e1ca9da4e59f61,
-        type: 3}
-      propertyPath: speed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 5634833293158175441, guid: 492b922924e75a6458e1ca9da4e59f61,
         type: 3}
       propertyPath: weaponDistance
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634833293158175444, guid: 492b922924e75a6458e1ca9da4e59f61,
+        type: 3}
+      propertyPath: speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2524527934507165248, guid: 492b922924e75a6458e1ca9da4e59f61,
         type: 3}
@@ -2352,7 +2352,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 267.03302, y: 392.13806, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
-  m_Children: [{fileID: 16338495}]
+  m_Children:
+  - {fileID: 16338495}
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2391,7 +2392,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.0933332, y: 4.92}
+    oldSize: {x: 3.7, y: 4.1}
     newSize: {x: 5.0933332, y: 4.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5198,7 +5199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: "Ant\xF3nio Coelho"
+    name: Antonio Coelho
     sentences:
     - Today, children, we'll be learning recursive functions, one of the oldest practices
       in history

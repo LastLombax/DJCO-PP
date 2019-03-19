@@ -118,7 +118,6 @@ public class PlayerSkills : MonoBehaviour
         float dirX = Mathf.Cos(Mathf.PI / 3 + Mathf.Atan2(dirNormalized.y,dirNormalized.x));
         float dirY = Mathf.Sin(Mathf.PI / 3 + Mathf.Atan2(dirNormalized.y, dirNormalized.x));
         Vector3 directionShifted;
-        Debug.Log(direction.x);
         if (direction.x > 0)
         {
             directionShifted = new Vector3(dirX, dirY, 0);
