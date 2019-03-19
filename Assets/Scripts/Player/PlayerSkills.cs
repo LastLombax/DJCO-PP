@@ -215,4 +215,40 @@ public class PlayerSkills : MonoBehaviour
     {
         return poisonNodes;
     }
+
+    public float GetFireBallCooldownPercentage()
+    {
+        float percentage = (nextFireFireBall - Time.time) / fireBallCooldown.Value;
+        if (percentage < 0)
+        {
+            return 1;
+        } else
+        {
+            return 1 - percentage;
+        }
+    }
+    public float GetChainCooldownPercentage()
+    {
+        float percentage = (nextFireChain - Time.time) / chainCooldown.Value;
+        if (percentage < 0)
+        {
+            return 1;
+        }
+        else
+        {
+            return 1 - percentage;
+        }
+    }
+    public float GetPoisonCooldownPercentage()
+    {
+        float percentage = (nextFirePoison - Time.time) / poisonCooldown.Value;
+        if (percentage < 0)
+        {
+            return 1;
+        }
+        else
+        {
+            return 1 - percentage;
+        }
+    }
 }
