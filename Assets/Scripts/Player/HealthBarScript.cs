@@ -9,6 +9,7 @@ public class HealthBarScript : MonoBehaviour
     {
         Vector3 positionCam = Camera.main.ViewportToWorldPoint(new Vector3(0.14f, 0.9f, 0));
         transform.position = new Vector3(positionCam.x, positionCam.y, 10);
+        GetComponent<SpriteRenderer>().color = new Color(0.784f, 0.078f, 0.078f);
     }
 
     // Update is called once per frame
