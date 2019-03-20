@@ -26,7 +26,7 @@ public class PoisonPuddleScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -34,12 +34,12 @@ public class PoisonPuddleScript : MonoBehaviour
             {
                 if(Time.time > enemiesNextDamageTick[collision.gameObject])
                 {
-                    collision.gameObject.GetComponent<Enemy>().DmgCollision(damage * -1);
+                    collision.gameObject.GetComponent<Enemy>().DmgCollision(-damage);
                     enemiesNextDamageTick[collision.gameObject] = Time.time + damageCooldown;
                 }
             } else
             {
-                collision.gameObject.GetComponent<Enemy>().DmgCollision(damage * -1);
+                collision.gameObject.GetComponent<Enemy>().DmgCollision(-damage);
                 enemiesNextDamageTick.Add(collision.gameObject, Time.time + damageCooldown);
             }
         }
