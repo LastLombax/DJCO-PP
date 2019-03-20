@@ -14,7 +14,7 @@ public class Torcato : MonoBehaviour
 
     private bool[] answers = {true, true, false, false, true};
     private int level;
-    private bool state;
+    private int score;
     private bool over;
     private bool done;
     
@@ -22,7 +22,7 @@ public class Torcato : MonoBehaviour
     void Start()
     {
         level = 0;
-        state = true;
+        score = 0;
         over = false;
         done = false;
         world = GameObject.Find("world");
@@ -38,7 +38,7 @@ public class Torcato : MonoBehaviour
 
         if (over && !done) {
             done = true;
-            if (state) {
+            if (score >= 3) {
                 Debug.Log("Passaste");
             } else {
                 Debug.Log("Lamento, mas não obtiveste uma classificação satisfatória...");
@@ -50,7 +50,7 @@ public class Torcato : MonoBehaviour
 
     public void CheckAnswer(bool answer) 
     {
-        state = state && (answer == answers[level]);
+        score += answer == answers[level] ? 1 : 0;
         level++;
         if (level < answers.Length){
             world.GetComponent<SpriteRenderer>().sprite = worlds[level];
