@@ -3167,8 +3167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -121.60004, y: -393.02}
-  m_SizeDelta: {x: 1071.3, y: 52.8}
+  m_AnchoredPosition: {x: -121.60004, y: -414.9}
+  m_SizeDelta: {x: 1071.3, y: 96.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932278162
 MonoBehaviour:
@@ -6460,7 +6460,7 @@ MonoBehaviour:
     name: Gabriel Torcato David
     sentences:
     - Is this the real life? Or is this just Tarski's World?
-    - Caught in a landslide, no escape from the table truths
+    - Caught in a landslide, no escape from the  truth tables
     - Open your PCs, look out to the screens and see
     - I'm just a poor student, I need some sympathy...
     - Ehem, sorry, I didn't see you there

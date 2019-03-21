@@ -1294,6 +1294,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5634833293158175441, guid: 492b922924e75a6458e1ca9da4e59f61,
+        type: 3}
+      propertyPath: weaponDistance
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5634833293158175444, guid: 492b922924e75a6458e1ca9da4e59f61,
         type: 3}
       propertyPath: speed
@@ -1358,11 +1363,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5634833293158175441, guid: 492b922924e75a6458e1ca9da4e59f61,
-        type: 3}
-      propertyPath: weaponDistance
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 492b922924e75a6458e1ca9da4e59f61, type: 3}
@@ -2739,8 +2739,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 18}
-  m_SizeDelta: {x: 383.5, y: 232.4}
+  m_AnchoredPosition: {x: -20, y: -81.4}
+  m_SizeDelta: {x: 383.5, y: 431.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932278162
 MonoBehaviour:
