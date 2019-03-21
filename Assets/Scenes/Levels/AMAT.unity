@@ -3071,6 +3071,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7533059368913444611, guid: 5c297e76390964941af85fa0f481526d,
+        type: 3}
+      propertyPath: yPos
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7533059368913444611, guid: 5c297e76390964941af85fa0f481526d,
+        type: 3}
+      propertyPath: xPos
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606281635357516415, guid: 5c297e76390964941af85fa0f481526d,
+        type: 3}
+      propertyPath: skill
+      value: poison
+      objectReference: {fileID: 0}
     - target: {fileID: 1138978186559365794, guid: 5c297e76390964941af85fa0f481526d,
         type: 3}
       propertyPath: m_Sprite
@@ -3082,25 +3097,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.75
       objectReference: {fileID: 0}
-    - target: {fileID: 7533059368913444611, guid: 5c297e76390964941af85fa0f481526d,
-        type: 3}
-      propertyPath: yPos
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7533059368913444611, guid: 5c297e76390964941af85fa0f481526d,
-        type: 3}
-      propertyPath: xPos
-      value: 0.12
-      objectReference: {fileID: 0}
     - target: {fileID: 7223540813390406990, guid: 5c297e76390964941af85fa0f481526d,
         type: 3}
       propertyPath: m_Name
       value: poisonSlider
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606281635357516415, guid: 5c297e76390964941af85fa0f481526d,
-        type: 3}
-      propertyPath: skill
-      value: poison
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c297e76390964941af85fa0f481526d, type: 3}
@@ -3798,7 +3798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1106795742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6196,12 +6196,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1138978186559365794, guid: 5c297e76390964941af85fa0f481526d,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2c88326129b342a49ac4a12d8152963e,
-        type: 3}
     - target: {fileID: 7533059368913444611, guid: 5c297e76390964941af85fa0f481526d,
         type: 3}
       propertyPath: xPos
@@ -6212,15 +6206,21 @@ PrefabInstance:
       propertyPath: yPos
       value: 0.8
       objectReference: {fileID: 0}
-    - target: {fileID: 7223540813390406990, guid: 5c297e76390964941af85fa0f481526d,
-        type: 3}
-      propertyPath: m_Name
-      value: fireBallSlider
-      objectReference: {fileID: 0}
     - target: {fileID: 2606281635357516415, guid: 5c297e76390964941af85fa0f481526d,
         type: 3}
       propertyPath: skill
       value: fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138978186559365794, guid: 5c297e76390964941af85fa0f481526d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c88326129b342a49ac4a12d8152963e,
+        type: 3}
+    - target: {fileID: 7223540813390406990, guid: 5c297e76390964941af85fa0f481526d,
+        type: 3}
+      propertyPath: m_Name
+      value: fireBallSlider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c297e76390964941af85fa0f481526d, type: 3}
