@@ -8,17 +8,13 @@ public class FireballScript : Skill
     protected float range;
     protected float damage;
     protected int projectilesNumber;
+    private int projNumber;
 
     // Start is called before the first frame update
     void Start()
     {
         Setup();
-        var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = transform.position - mousePosition;
-        var dirLenght = Mathf.Sqrt(direction.x * direction.x + direction.y * direction.y);
-
-        velX = -direction.x * (velocity / dirLenght);
-        velY = -direction.y * (velocity / dirLenght);
+        
 
     }
 
@@ -44,11 +40,22 @@ public class FireballScript : Skill
             Destroy(gameObject);
     }
 
-    public void GiveStats(float rangeStat, float damageStat, int projectileNumberStat)
+    public void GiveStats(float rangeStat, float damageStat, int projectileNumberStat, int projectileNumber)
     {
         range = rangeStat;
         damage = damageStat;
         projectilesNumber = projectileNumberStat;
+        projNumber = projectileNumber;
+
+        float ang = -Mathf.PI/12 * (projectilesNumber - 1) + (Mathf.PI/6 * projNumber);
+
+        var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = transform.position - mousePosition;
+        float realAng = Mathf.Atan2(direction.y, direction.x) + ang;
+        Debug.Log(Mathf.Atan2(direction.x, direction.y));
+
+        velX = -Mathf.Cos(realAng) * velocity;
+        velY = -Mathf.Sin(realAng) * velocity;
     }
 
 }

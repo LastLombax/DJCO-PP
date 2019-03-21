@@ -50,15 +50,15 @@ public class PlayerSkills : MonoBehaviour
         xp = 100;
         fireBallRange = new CharacterStat(30); //initial range = 15
         fireBallCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
-        fireBallDamage = new CharacterStat(20); //inital damage of 20
+        fireBallDamage = new CharacterStat(15); //inital damage of 20
         fireBallProjectilesNumber = new CharacterStat(1); //only one projectile in the beginning
         chainRange = new CharacterStat(25); //initial range = 25
         chainCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
-        chainDamage = new CharacterStat(5); //inital damage of 5
+        chainDamage = new CharacterStat(10); //inital damage of 5
         chainNumberBounces = new CharacterStat(2); //initial 2 bounces
         poisonRange = new CharacterStat(20); //initial range = 20
         poisonCooldown = new CharacterStat(2); //initial cooldown = 2 seconds
-        poisonDamage = new CharacterStat(5); //inital damage of 5
+        poisonDamage = new CharacterStat(10); //inital damage of 5
         poisonTime = new CharacterStat(2); //initial time = 2 seconds
         fireBallNodes = new Dictionary<string, SkillTreeNode>();
         chainNodes = new Dictionary<string, SkillTreeNode>();
@@ -92,10 +92,13 @@ public class PlayerSkills : MonoBehaviour
 
     private void Fireball()
     {
-        GameObject fireBall = Instantiate(fireBallProjectile, transform.position, Quaternion.identity);
-        fireBall.GetComponent<FireballScript>().GiveStats(fireBallRange.Value, fireBallDamage.Value, (int)fireBallProjectilesNumber.Value);
+        for(int i = 0; i < fireBallProjectilesNumber.Value; i++)
+        {
+            GameObject fireBall = Instantiate(fireBallProjectile, transform.position, Quaternion.identity);
+            fireBall.GetComponent<FireballScript>().GiveStats(fireBallRange.Value, fireBallDamage.Value, (int)fireBallProjectilesNumber.Value, i);
 
-        Physics2D.IgnoreCollision(fireBall.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(fireBall.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
     }
 
     private void ChainLightning()

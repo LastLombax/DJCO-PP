@@ -40,7 +40,8 @@ public class WeaponScript : MonoBehaviour
         {
             currentAng = startAng = midAng - offsetAng;
             endAng = midAng + offsetAng;
-            GetComponent<SpriteRenderer>().flipX = true;
+            //GetComponent<SpriteRenderer>().flipX = true;
+            gameObject.transform.localScale = new Vector3(-gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
         }
 
         var rotationVector = transform.rotation.eulerAngles;
