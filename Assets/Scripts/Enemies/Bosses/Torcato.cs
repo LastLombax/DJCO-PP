@@ -38,12 +38,12 @@ public class Torcato : MonoBehaviour
 
         if (over && !done) {
             done = true;
-            if (score >= 3) {
+            if (score >= 4) {
                 Debug.Log("Passaste");
+                GameObject.Find("Player").GetComponent<PlayerStats>().CompleteUC("MDIS");
             } else {
                 Debug.Log("Lamento, mas não obtiveste uma classificação satisfatória...");
             }
-            GameObject.Find("Player").GetComponent<PlayerStats>().CompleteUC("MDIS");
             StartCoroutine(gm.Load2Scene("MainRoom"));
         }
     }
