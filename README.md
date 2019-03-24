@@ -1,19 +1,42 @@
-# DJCO-FEUP-PP
+# DJCO-FEUP-PP Project
 
-* Dungeon Crawler
-* 2D
-* Classic Style(zelda, etc)
-* Skill Tree ( 3 main abilities with branching improvements each). Upgraded with Gold earned in-game
-* Passive Stats - Upgraded with XP(Health, Mana, Speed) - _OptionaL_
-* FEUP concept -  Several Floors. Each floor is a semester which contains different rooms. Each room is a course. Final boss is the Teacher.
-* Rooms can be puzzles or filled with enemies.
-* First room is i003 which is the main room. Player chooses one of five paths(for each course) and has to beat the boss. Can't go back to i003.
+## MIEICrawler: First Semester Edition
 
-## First Floor - 1st Year, 1st Semester
+_MIEICrawler_ is a 2D dungeon crawler game, in which the player must pass on each subject from the first semester of MIEIC.
 
-* AOCO - Puzzle with logical gates.
-* ALGE - Fight. To Ferreira throws basketballs. 
-* AMAT - Smash button to eat integrals, faster than Rui Ribeiro.
-* MDIS - Puzzle with truth tables/expressions.
-* FPRO - Fight. António Coelho throws parenthesis. 10 "(" and then he throws 10 ")". If other enemies, scheme enemies.
+The game is composed by five levels, one of each subject of the first semester, and a main room where the player can choose the level to play and upgrade their skills.
 
+### Skills
+The player has access to three main skills: 
+
+* A throwing glass of beeer;
+* A mouse cursor that bounces between players;
+* A cup of hot coffee that, when thrown, it spills and leaves an area of damage per second.
+
+The player also has a sword for close range damage.
+
+### Gameplay
+
+The player moves with WASD and controls the direction of the character with the mouse. Each skill can be used with the keys _1_, _2_ or _3_. To swing the sword, press _MOUSE1_.
+
+
+### Levels
+
+Each level has a boss at the end and each boss is challenged with a Fight or a Puzzle.
+
+
+### Developers
+
+| Name            | Number     | Profile                                           |
+|-----------------|-----------|---------------------------------------------------|
+| José Freixo  | 201504988  | [JoseFreixo](https://github.com/JoseFreixo) |
+| Tiago Carvalho  | 201506553  | [titarta](https://github.com/titarta) |
+| Vítor Magalhães | 201503447  | [LastLombax](https://github.com/LastLombax)       |
+
+### Special Thanks
+
+We thank Márcia Meira ([Meirinha](https://github.com/Meirinha)) who helped us with the sprites and textures and Hugo Neves who voiced the trailer.
+
+### Trailer
+
+Check the trailer [here](https://www.youtube.com/watch?v=l4TZ37HgOeo&feature=youtu.be&fbclid=IwAR257EL9ZR58Z1N9fvu_d2enSTqXrP1UwZ_XzzOUYcf9E-VErDlftTyNiFg).
