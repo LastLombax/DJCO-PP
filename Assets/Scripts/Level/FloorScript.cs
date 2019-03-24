@@ -7,6 +7,7 @@ public class FloorScript : MonoBehaviour
     public GameManager gm;
     public bool isPlayerHere = false;
     private ArrayList enemies;
+    public bool silencesPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,8 @@ public class FloorScript : MonoBehaviour
             return;
         }
         if(collision.gameObject.tag.Equals("Player")){
-            foreach(GameObject enemy in enemies){
+            collision.gameObject.GetComponent<PlayerSkills>().silenced = silencesPlayer;
+            foreach (GameObject enemy in enemies){
                 if (enemy != null)
                     enemy.GetComponent<Enemy>().SetActivation(true);
             }
@@ -34,7 +36,8 @@ public class FloorScript : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.tag.Equals("Player")){
-            foreach(GameObject enemy in enemies){
+            collision.gameObject.GetComponent<PlayerSkills>().silenced = false;
+            foreach (GameObject enemy in enemies){
                 if (enemy != null)
                     enemy.GetComponent<Enemy>().SetActivation(false);
             }

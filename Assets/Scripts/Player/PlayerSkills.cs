@@ -13,6 +13,8 @@ public class PlayerSkills : MonoBehaviour
     public float nextFireFireBall = 0;
     public float nextFireChain = 0;
     public float nextFirePoison = 0;
+    public bool silenced = false;
+    public bool frozen = false;
 
     public int xp;
 
@@ -68,6 +70,10 @@ public class PlayerSkills : MonoBehaviour
 // Update is called once per frame
     void Update()
     {
+        if (silenced || frozen)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1) && Time.time > nextFireFireBall)
         {
             nextFireFireBall = Time.time + fireBallCooldown.Value;

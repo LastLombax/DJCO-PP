@@ -52,7 +52,6 @@ public class FireballScript : Skill
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = transform.position - mousePosition;
         float realAng = Mathf.Atan2(direction.y, direction.x) + ang;
-        Debug.Log(Mathf.Atan2(direction.x, direction.y));
 
         velX = -Mathf.Cos(realAng) * velocity;
         velY = -Mathf.Sin(realAng) * velocity;

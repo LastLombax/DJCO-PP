@@ -22,9 +22,9 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
 	{
-		//animator.SetBool("IsOpen", true);
-
-		nameText.text = dialogue.name;
+        //animator.SetBool("IsOpen", true);
+        GameObject.Find("Player").GetComponent<PlayerSkills>().frozen = true;
+        nameText.text = dialogue.name;
 
 		sentences.Clear();
 
@@ -62,8 +62,9 @@ public class DialogueManager : MonoBehaviour
 	void EndDialogue()
 	{		
 		dialogueEnd = true;
-		//animator.SetBool("IsOpen", false);
-		GameObject.Find("DialogueBox").SetActive(false); 
+        GameObject.Find("Player").GetComponent<PlayerSkills>().frozen = false;
+        //animator.SetBool("IsOpen", false);
+        GameObject.Find("DialogueBox").SetActive(false); 
 	}
 
 }
