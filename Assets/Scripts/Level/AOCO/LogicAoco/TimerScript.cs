@@ -60,6 +60,8 @@ public class TimerScript : MonoBehaviour
             Debug.Log("You won!!");
             gameWon = true;
             GameObject.Find("Player").GetComponent<PlayerStats>().CompleteUC("AOCO");
+            gm.BossResult("Won");
+            GameObject.Find("door11").GetComponent<AudioSource>().Stop();
             StartCoroutine(gm.Load2Scene("MainRoom"));
         }
     }

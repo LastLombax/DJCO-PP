@@ -40,10 +40,14 @@ public class Torcato : MonoBehaviour
             done = true;
             if (score >= 4) {
                 Debug.Log("Passaste");
+                gm.BossResult("Won");
                 GameObject.Find("Player").GetComponent<PlayerStats>().CompleteUC("MDIS");
             } else {
+                gm.BossResult("Lost");
                 Debug.Log("Lamento, mas não obtiveste uma classificação satisfatória...");
             }
+            GameObject.Find("door11").GetComponent<AudioSource>().Stop();
+
             StartCoroutine(gm.Load2Scene("MainRoom"));
         }
     }

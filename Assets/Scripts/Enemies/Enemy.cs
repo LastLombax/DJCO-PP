@@ -59,6 +59,12 @@ public abstract class Enemy : MonoBehaviour
             if (boss != ""){
                 Debug.Log("Pronto passaste, toma lá os ECTs...");
                 player.GetComponent<PlayerStats>().CompleteUC(boss);
+                GameObject.Find("GameManager").GetComponent<GameManager>().BossResult("Won");
+                if (boss == "ALGE")
+                    GameObject.Find("door9").GetComponent<AudioSource>().Stop();
+                else if (boss == "FPRO")
+                    GameObject.Find("door11").GetComponent<AudioSource>().Stop();
+
                 GameObject.Find("Teleporter").GetComponent<Teleporter>().Leave();
             }
             Destroy(gameObject);

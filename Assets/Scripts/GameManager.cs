@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float loadDelay = 3f;
+    public float loadDelay = 10f;
     // Start is called before the first frame update
 
     public static GameManager gm;
@@ -59,5 +59,11 @@ public class GameManager : MonoBehaviour
             player.GetComponent<AudioSource>().Play();
         }
 
+    }
+
+    public void BossResult(string result){
+        var canvas = GameObject.Find(result);
+        canvas.GetComponent<UnityEngine.UI.Text>().enabled = true;
+        canvas.GetComponent<AudioSource>().Play();
     }
 }
