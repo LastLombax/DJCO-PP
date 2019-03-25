@@ -23,6 +23,9 @@ The player moves with WASD and controls the direction of the character with the 
 ### Levels
 
 Each level has a boss at the end and each boss is challenged with a Fight or a Puzzle.
+The bosses of the AOCO and MDIS levels are puzzles from those subjects. 
+The bosses of the ALGE and FPRO levels are fights from the teachers of those subjects.
+The boss of the AMAT level is a mash-button boss.
 
 
 ### Developers
