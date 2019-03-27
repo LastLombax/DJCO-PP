@@ -27,6 +27,10 @@ The bosses of the AOCO and MDIS levels are puzzles from those subjects.
 The bosses of the ALGE and FPRO levels are fights from the teachers of those subjects.
 The boss of the AMAT level is a mash-button boss.
 
+### Download EXE
+
+To download the EXE to try the game, download it [here](https://drive.google.com/open?id=1QfqlyP91ftOht7xld_-g-fbKGUIvcn4r)
+
 
 ### Developers
 
